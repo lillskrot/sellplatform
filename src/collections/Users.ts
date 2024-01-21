@@ -1,4 +1,4 @@
-//import { PrimaryActionEmailHtml } from '../components/emails/PrimaryActionEmail'
+import { PrimaryActionEmailHtml } from "../components/emails/PrimaryActionEmail";
 import { Access, CollectionConfig } from "payload/types";
 
 const adminsAndUser: Access = ({ req: { user } }) => {
@@ -14,14 +14,15 @@ const adminsAndUser: Access = ({ req: { user } }) => {
 export const Users: CollectionConfig = {
   slug: "users",
   auth: {
-    depth: 0,
-    /*
     verify: {
       generateEmailHTML: ({ token }) => {
-        return ` <a href='${process.env.NEXT_PUBLIC_SERVER_URL}/verify-email?token=${token}>`;
+        return PrimaryActionEmailHtml({
+          actionLabel: "verify your account",
+          buttonText: "Verify Account",
+          href: `${process.env.NEXT_PUBLIC_SERVER_URL}/verify-email?token=${token}`,
+        });
       },
     },
-    */
   },
   access: {
     read: adminsAndUser,
@@ -34,7 +35,6 @@ export const Users: CollectionConfig = {
     defaultColumns: ["id"],
   },
   fields: [
-    /*/
     {
       name: "products",
       label: "Products",
@@ -45,7 +45,6 @@ export const Users: CollectionConfig = {
       relationTo: "products",
       hasMany: true,
     },
- 
     {
       name: "product_files",
       label: "Product files",
@@ -56,7 +55,6 @@ export const Users: CollectionConfig = {
       relationTo: "product_files",
       hasMany: true,
     },
-       */
     {
       name: "role",
       defaultValue: "user",
