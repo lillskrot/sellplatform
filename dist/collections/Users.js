@@ -1,0 +1,80 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Users = void 0;
+var adminsAndUser = function (_a) {
+    var user = _a.req.user;
+    if (user.role === "admin")
+        return true;
+    return {
+        id: {
+            equals: user.id,
+        },
+    };
+};
+exports.Users = {
+    slug: "users",
+    auth: {
+        depth: 0,
+        /*
+        verify: {
+          generateEmailHTML: ({ token }) => {
+            return ` <a href='${process.env.NEXT_PUBLIC_SERVER_URL}/verify-email?token=${token}>`;
+          },
+        },
+        */
+    },
+    access: {
+        read: adminsAndUser,
+        create: function () { return true; },
+        update: function (_a) {
+            var req = _a.req;
+            return req.user.role === "admin";
+        },
+        delete: function (_a) {
+            var req = _a.req;
+            return req.user.role === "admin";
+        },
+    },
+    admin: {
+        hidden: function (_a) {
+            var user = _a.user;
+            return user.role !== "admin";
+        },
+        defaultColumns: ["id"],
+    },
+    fields: [
+        /*/
+        {
+          name: "products",
+          label: "Products",
+          admin: {
+            condition: () => false,
+          },
+          type: "relationship",
+          relationTo: "products",
+          hasMany: true,
+        },
+     
+        {
+          name: "product_files",
+          label: "Product files",
+          admin: {
+            condition: () => false,
+          },
+          type: "relationship",
+          relationTo: "product_files",
+          hasMany: true,
+        },
+           */
+        {
+            name: "role",
+            defaultValue: "user",
+            required: true,
+            type: "select",
+            options: [
+                { label: "Admin", value: "admin" },
+                { label: "User", value: "user" },
+            ],
+        },
+    ],
+};
