@@ -8,8 +8,6 @@ export const authRouter = router({
   createPayloadUser: publicProcedure
     .input(AuthCredentialsValidator)
     .mutation(async ({ input }) => {
-      console.log("inside authRouter");
-
       const { email, password } = input;
       const payload = await getPayloadClient();
 
@@ -63,8 +61,7 @@ export const authRouter = router({
       const payload = await getPayloadClient();
 
       try {
-        console.log("starting to login");
-        let user = await payload.login({
+        await payload.login({
           collection: "users",
           data: {
             email,
@@ -73,11 +70,8 @@ export const authRouter = router({
           res,
         });
 
-        console.log("success logging in", user);
-
         return { success: true };
       } catch (err) {
-        console.log("error loggin in");
         throw new TRPCError({ code: "UNAUTHORIZED" });
       }
     }),

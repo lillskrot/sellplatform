@@ -20,7 +20,6 @@ import { ZodError } from "zod";
 import { useRouter, useSearchParams } from "next/navigation";
 
 const Page = () => {
-  console.log("ON LOGINPAGE");
   const searchParams = useSearchParams();
   const router = useRouter();
   const isSeller = searchParams.get("as") === "seller";

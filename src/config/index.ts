@@ -1,6 +1,6 @@
 export const PRODUCT_CATEGORIES = [
   {
-    label: "Garden Tool Kits",
+    label: "UI Kits",
     value: "ui_kits" as const,
     featured: [
       {
@@ -21,7 +21,7 @@ export const PRODUCT_CATEGORIES = [
     ],
   },
   {
-    label: "Seeds Eller Nåt",
+    label: "Products",
     value: "icons" as const,
     featured: [
       {

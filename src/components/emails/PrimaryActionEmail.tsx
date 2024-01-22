@@ -28,7 +28,7 @@ export const EmailTemplate = ({
   return (
     <Html>
       <Head />
-      <Preview>The marketplace for high-quality digital goods.</Preview>
+      <Preview>The marketplace for high-quality TUB products.</Preview>
       <Body style={main}>
         <Container style={container}>
           <Img
@@ -40,8 +40,8 @@ export const EmailTemplate = ({
           />
           <Text style={paragraph}>Hi there,</Text>
           <Text style={paragraph}>
-            Welcome to DigitalHippo, the marketplace for high quality digital
-            goods. Use the button below to {actionLabel}.
+            Welcome to TUB, the marketplace for high quality TUB products. Use
+            the button below to {actionLabel}.
           </Text>
           <Section style={btnContainer}>
             <Button style={button} href={href}>
@@ -51,7 +51,7 @@ export const EmailTemplate = ({
           <Text style={paragraph}>
             Best,
             <br />
-            The DigitalHippo team
+            The TUB team
           </Text>
           <Hr style={hr} />
           <Text style={footer}>

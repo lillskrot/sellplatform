@@ -20,7 +20,6 @@ import { ZodError } from "zod";
 import { useRouter } from "next/navigation";
 
 const Page = () => {
-  console.log("SIGN UP");
   const {
     register,
     handleSubmit,
