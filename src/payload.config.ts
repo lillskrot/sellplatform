@@ -23,6 +23,19 @@ export default buildConfig({
   admin: {
     user: "users",
     bundler: webpackBundler(),
+    webpack: (config) => {
+      // This is to get rid of typescript error
+      if (config.resolve?.fallback)
+        config.resolve.fallback = {
+          ...config.resolve.fallback,
+          fs: false,
+          "mongodb-memory-server": false,
+          net: false,
+          readline: false,
+        };
+
+      return config;
+    },
     meta: {
       titleSuffix: "- TUBEN",
       favicon: "/favicon.ico",
