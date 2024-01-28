@@ -1,9 +1,7 @@
-/** @type {import('next').NextConfig} */
-
 const path = require("path");
 const { withPayload } = require("@payloadcms/next-payload");
 
-nextConfig = withPayload(
+const nextConfig = withPayload(
   {
     images: {
       domains: ["localhost", "sellplatform-production.up.railway.app"],
@@ -15,7 +13,7 @@ nextConfig = withPayload(
     // and configure the admin route to your Payload CMS.
 
     // Point to your Payload config (required)
-    configPath: path.resolve(__dirname, "./src/payload.config.ts"),
+    configPath: path.resolve(__dirname, "src", "payload.config.ts"),
 
     // Point to custom Payload CSS (optional)
     // cssPath: path.resolve(__dirname, "./css/my-custom-payload-styles.css"),
