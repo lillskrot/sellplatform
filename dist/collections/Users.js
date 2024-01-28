@@ -2,16 +2,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Users = void 0;
 var PrimaryActionEmail_1 = require("../components/emails/PrimaryActionEmail");
-var adminsAndUser = function (_a) {
-    var user = _a.req.user;
-    if (user.role === "admin")
-        return true;
-    return {
-        id: {
-            equals: user.id,
-        },
-    };
-};
+/*const adminsAndUser: Access = ({ req: { user } }) => {
+  if (user.role === "admin") return true;
+
+  return {
+    id: {
+      equals: user.id,
+    },
+  };
+};*/
 exports.Users = {
     slug: "users",
     auth: {
@@ -27,23 +26,14 @@ exports.Users = {
         },
     },
     access: {
-        read: adminsAndUser,
+        //read: adminsAndUser,
         create: function () { return true; },
-        update: function (_a) {
-            var req = _a.req;
-            return req.user.role === "admin";
-        },
-        delete: function (_a) {
-            var req = _a.req;
-            return req.user.role === "admin";
-        },
+        /*update: ({ req }) => req.user.role === "admin",
+        delete: ({ req }) => req.user.role === "admin",*/
     },
     admin: {
-        hidden: function (_a) {
-            var user = _a.user;
-            return user.role !== "admin";
-        },
-        defaultColumns: ["id"],
+    //hidden: ({ user }) => user.role !== "admin",
+    //defaultColumns: ["id"],
     },
     fields: [
         {

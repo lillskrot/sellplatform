@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { privateProcedure, publicProcedure, router } from "./trpc";
+import { privateProcedure, router } from "./trpc";
 import { TRPCError } from "@trpc/server";
 import { getPayloadClient } from "../get-payload";
 import { stripe } from "../lib/stripe";
@@ -48,7 +48,7 @@ export const paymentRouter = router({
       });
 
       line_items.push({
-        price: "price_1OCeBwA19umTXGu8s4p2G3aX",
+        price: "price_1Ob0TzGMxQQd9VGjzeSGLqnv",
         quantity: 1,
         adjustable_quantity: {
           enabled: false,
