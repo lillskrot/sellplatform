@@ -48,7 +48,10 @@ export const paymentRouter = router({
       });
 
       line_items.push({
-        price: "price_1Ob0TzGMxQQd9VGjzeSGLqnv",
+        price:
+          process.env.NODE_ENV === "production"
+            ? "price_1Oe0M7GMxQQd9VGj2q7uI99U"
+            : "price_1Ob0TzGMxQQd9VGjzeSGLqnv",
         quantity: 1,
         adjustable_quantity: {
           enabled: false,
