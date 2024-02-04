@@ -139,9 +139,7 @@ export const ReceiptEmail = ({
                 paddingLeft: "40px",
                 paddingTop: 20,
               }}
-            >
-              <Text style={productTitle}>Transaction Fee</Text>
-            </Column>
+            ></Column>
 
             <Column style={productPriceWrapper} align="right">
               <Text style={productPrice}>{formatPrice(1)}</Text>

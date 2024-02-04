@@ -34,8 +34,6 @@ const Cart = () => {
     0
   );
 
-  const fee = 1;
-
   return (
     <Sheet>
       <SheetTrigger className="group -m-2 flex items-center p-2">
@@ -68,12 +66,8 @@ const Cart = () => {
                   <span>Free</span>
                 </div>
                 <div className="flex">
-                  <span className="flex-1">Transaction Fee</span>
-                  <span>{formatPrice(fee)}</span>
-                </div>
-                <div className="flex">
                   <span className="flex-1">Total</span>
-                  <span>{formatPrice(cartTotal + fee)}</span>
+                  <span>{formatPrice(cartTotal)}</span>
                 </div>
               </div>
 
