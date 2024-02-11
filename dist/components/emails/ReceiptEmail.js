@@ -84,8 +84,7 @@ var ReceiptEmail = function (_a) {
                     React.createElement(components_1.Column, { style: {
                             paddingLeft: "40px",
                             paddingTop: 20,
-                        } },
-                        React.createElement(components_1.Text, { style: productTitle }, "Transaction Fee")),
+                        } }),
                     React.createElement(components_1.Column, { style: productPriceWrapper, align: "right" },
                         React.createElement(components_1.Text, { style: productPrice }, (0, utils_1.formatPrice)(1)))),
                 React.createElement(components_1.Hr, { style: productPriceLine }),
