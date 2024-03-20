@@ -28,7 +28,7 @@ export function formatPrice(
 export function constructMetadata({
   title = "TUB - the marketplace for TUB products",
   description = "TUB is an open-source marketplace for TUB products.",
-  image = "/thumbnail.png",
+  image = "/thumbnailTUB.png",
   icons = "/favicon.ico",
   noIndex = false,
 }: {

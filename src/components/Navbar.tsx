@@ -8,6 +8,7 @@ import { getServerSideUser } from "@/lib/payload-utils";
 import { cookies } from "next/headers";
 import UserAccountNav from "./UserAccountNav";
 import MobileNav from "./MobileNav";
+import Image from "next/image";
 
 const Navbar = async () => {
   const nextCookies = cookies();
@@ -21,9 +22,10 @@ const Navbar = async () => {
             <div className="flex h-16 items-center">
               <MobileNav />
 
-              <div className="ml-4 flex lg:ml-0">
+              <div className="ml-4 mt-3 flex lg:ml-0">
                 <Link href="/">
-                  <Icons.logo className="h-10 w-10" />
+                  {/* Replace the current logo with an image */}
+                  <img src="logo.png" alt="logo.png" className="h-20 w-20" />
                 </Link>
               </div>
 

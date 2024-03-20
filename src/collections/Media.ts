@@ -46,7 +46,7 @@ export const Media: CollectionConfig = {
     staticDir: "media",
     imageSizes: [
       {
-        name: "thumbnail",
+        name: "thumbnailTUB",
         width: 400,
         height: 300,
         position: "centre",

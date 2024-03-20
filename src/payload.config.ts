@@ -26,7 +26,7 @@ export default buildConfig({
     meta: {
       titleSuffix: "- TUBEN",
       favicon: "/favicon.ico",
-      ogImage: "/thumbnail.jpg",
+      ogImage: "/thumbnailTUB.jpg",
     },
   },
   rateLimit: {
