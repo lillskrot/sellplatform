@@ -67,7 +67,7 @@ var get_payload_1 = require("./get-payload");
 var next_utils_1 = require("./next-utils");
 var trpcExpress = __importStar(require("@trpc/server/adapters/express"));
 var trpc_1 = require("./trpc");
-var body_parser_1 = __importDefault(require("body-parser"));
+var bodyParser = __importStar(require("body-parser"));
 var webhooks_1 = require("./webhooks");
 var build_1 = __importDefault(require("next/dist/build"));
 var path_1 = __importDefault(require("path"));
@@ -86,7 +86,7 @@ var start = function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                webhookMiddleware = body_parser_1.default.json({
+                webhookMiddleware = bodyParser.json({
                     verify: function (req, _, buffer) {
                         req.rawBody = buffer;
                     },
