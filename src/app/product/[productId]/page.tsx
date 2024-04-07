@@ -51,8 +51,8 @@ const Page = async ({ params }: PageProps) => {
     .filter(Boolean) as string[];
 
   return (
-    <MaxWidthWrapper className="bg-white">
-      <div className="bg-white">
+    <MaxWidthWrapper className="blurry-background">
+      <div className="">
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           {/* Product Details */}
           <div className="lg:max-w-lg lg:self-end">
@@ -133,7 +133,7 @@ const Page = async ({ params }: PageProps) => {
                 <div className="group inline-flex text-sm text-medium">
                   <Shield
                     aria-hidden="true"
-                    className="mr-2 h-5 w-5 flex-shrink-0 text-gray-400"
+                    className="mr-2 h-5 w-5 flex-shrink-0 text-gray-700"
                   />
                   <span className="text-muted-foreground hover:text-gray-700">
                     30 Day Return Guarantee

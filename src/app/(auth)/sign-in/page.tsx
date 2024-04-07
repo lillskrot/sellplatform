@@ -61,13 +61,19 @@ const Page = () => {
     },
     onError: (err) => {
       if (err.data?.code === "UNAUTHORIZED") {
-        toast.error("Invalid email or password.");
+        toast.error("Invalid email/password/zipcode/city/address.");
       }
     },
   });
 
-  const onSubmit = ({ email, password }: TAuthCredentialsValidator) => {
-    signIn({ email, password });
+  const onSubmit = ({
+    email,
+    password,
+    zipcode,
+    city,
+    address,
+  }: TAuthCredentialsValidator) => {
+    signIn({ email, password, zipcode, city, address });
   };
 
   return (
@@ -78,7 +84,7 @@ const Page = () => {
             <div className="ml-4 flex lg:ml-0">
               <Link href="/">
                 {/* Replace the current logo with an image */}
-                <img src="logo.png" alt="logo.png" className="h-20 w-20" />
+                <img src="/logo.png" alt="logo.png" className="h-20 w-20" />
               </Link>
             </div>
             <h1 className="text-2xl font-semibold tracking-tight">
@@ -129,6 +135,57 @@ const Page = () => {
                   {errors?.password && (
                     <p className="text-sm text-red-500">
                       {errors.password.message}
+                    </p>
+                  )}
+                </div>
+
+                <div className="grid gap-1 py-2">
+                  <Label htmlFor="address">Address</Label>
+                  <Input
+                    {...register("address")}
+                    type="address"
+                    className={cn({
+                      "focus-visible:ring-red-500": errors.address,
+                    })}
+                    placeholder="Address"
+                  />
+                  {errors?.address && (
+                    <p className="text-sm text-red-500">
+                      {errors.address.message}
+                    </p>
+                  )}
+                </div>
+
+                <div className="py-2">
+                  <Label htmlFor="zipcode">
+                    Zipcode and city - for shipping
+                  </Label>
+                  <div className="flex">
+                    <Input
+                      {...register("zipcode")}
+                      type="zipcode"
+                      className={cn("w-1/2 mr-2", {
+                        "focus-visible:ring-red-500": errors.zipcode,
+                      })}
+                      placeholder="Zipcode"
+                    />
+                    <Input
+                      {...register("city")}
+                      type="text"
+                      className={cn("w-1/2", {
+                        "focus-visible:ring-red-500": errors.city,
+                      })}
+                      placeholder="City"
+                    />
+                  </div>
+                  {errors?.zipcode && (
+                    <p className="text-sm text-red-500">
+                      {errors.zipcode.message}
+                    </p>
+                  )}
+                  {errors?.city && (
+                    <p className="text-sm text-red-500">
+                      {errors.city.message}
                     </p>
                   )}
                 </div>

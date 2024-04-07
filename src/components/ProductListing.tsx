@@ -1,5 +1,3 @@
-"use client";
-
 import { Product } from "@/payload-types";
 import { useEffect, useState } from "react";
 import { Skeleton } from "./ui/skeleton";
@@ -42,11 +40,11 @@ const ProductListing = ({ product, index }: ProductListingProps) => {
         })}
         href={`/product/${product.id}`}
       >
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full relative">
           <ImageSlider urls={validUrls} />
 
-          <h3 className="mt-4 font-medium text-sm text-gray-700">
-            {product.name}
+          <h3 className="mt-4 font-medium text-sm text-gray-700 relative">
+            <span className="h3-background">{product.name}</span>
           </h3>
           <p className="mt-1 text-sm text-gray-500">{label}</p>
           <p className="mt-1 font-medium text-sm text-gray-900">

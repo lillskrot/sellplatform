@@ -40,7 +40,7 @@ export const EmailTemplate = ({
           />
           <Text style={paragraph}>Hi there,</Text>
           <Text style={paragraph}>
-            Welcome to TUB, the marketplace for high quality TUB products. Use
+            Welcome to TUBIS, the marketplace for high quality TUB products. Use
             the button below to {actionLabel}.
           </Text>
           <Section style={btnContainer}>
