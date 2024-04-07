@@ -47,7 +47,7 @@ var EmailTemplate = function (_a) {
                 React.createElement(components_1.Img, { src: "".concat(process.env.NEXT_PUBLIC_SERVER_URL, "/hippo-newsletter-sign-up.png"), width: "150", height: "150", alt: "DigitalHippo", style: logo }),
                 React.createElement(components_1.Text, { style: paragraph }, "Hi there,"),
                 React.createElement(components_1.Text, { style: paragraph },
-                    "Welcome to TUB, the marketplace for high quality TUB products. Use the button below to ",
+                    "Welcome to TUBIS, the marketplace for high quality TUB products. Use the button below to ",
                     actionLabel,
                     "."),
                 React.createElement(components_1.Section, { style: btnContainer },

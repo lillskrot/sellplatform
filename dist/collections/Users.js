@@ -47,6 +47,21 @@ exports.Users = {
     },
     fields: [
         {
+            name: "zipcode",
+            label: "Zipcode",
+            type: "richText",
+        },
+        {
+            name: "city",
+            label: "City",
+            type: "richText",
+        },
+        {
+            name: "address",
+            label: "Address",
+            type: "richText",
+        },
+        {
             name: "products",
             label: "Products",
             admin: {
@@ -76,5 +91,19 @@ exports.Users = {
                 { label: "User", value: "user" },
             ],
         },
+        /*{
+          name: "address",
+          required: false,
+          type: "text",
+        },*/
+        //{
+        //name: "address",
+        //label: "address",
+        //admin: {
+        //condition: () => false,
+        //},
+        //type: "relationship",
+        //relationTo: "products",
+        //},
     ],
 };
