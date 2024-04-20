@@ -25,7 +25,7 @@ const Navbar = async () => {
               <div className="ml-4 mt-3 flex lg:ml-0">
                 <Link href="/">
                   {/* Replace the current logo with an image */}
-                  <img src="/logo.png" alt="logo.png" className="h-20 w-20" />
+                  <Image src="/logo.png" alt="logo.png" className="h-20 w-20" />
                 </Link>
               </div>
 

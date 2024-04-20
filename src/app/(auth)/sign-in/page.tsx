@@ -18,6 +18,7 @@ import { trpc } from "@/trpc/client";
 import { toast } from "sonner";
 import { ZodError } from "zod";
 import { useRouter, useSearchParams } from "next/navigation";
+import Image from "next/image";
 
 const Page = () => {
   const searchParams = useSearchParams();
@@ -84,7 +85,7 @@ const Page = () => {
             <div className="ml-4 flex lg:ml-0">
               <Link href="/">
                 {/* Replace the current logo with an image */}
-                <img src="/logo.png" alt="logo.png" className="h-20 w-20" />
+                <Image src="/logo.png" alt="logo.png" className="h-20 w-20" />
               </Link>
             </div>
             <h1 className="text-2xl font-semibold tracking-tight">
