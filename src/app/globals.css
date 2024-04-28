@@ -55,7 +55,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-image: url("/modern-red-sports-car.png"), url("/Ground2.png");
+    background-image: url("/red-sports-car.jpg"), url("/Ground2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top, center top; /* Adjusted background positions */

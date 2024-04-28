@@ -9,6 +9,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import React, { useState } from "react";
+import { EyeIcon, EyeOffIcon } from "lucide-react";
 
 import {
   AuthCredentialsValidator,
@@ -24,6 +26,12 @@ const Page = () => {
   const router = useRouter();
   const isSeller = searchParams.get("as") === "seller";
   const origin = searchParams.get("origin");
+  const [showPassword, setShowPassword] = useState(false); // State to manage password visibility
+
+  // Function to toggle password visibility
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const continueAsSeller = () => {
     router.push("?as=seller");
@@ -84,7 +92,11 @@ const Page = () => {
             <div className="ml-4 flex lg:ml-0">
               <Link href="/">
                 {/* Replace the current logo with an image */}
-                <img src="/logo.png" alt="logo.png" className="h-20 w-20" />
+                <img
+                  src="/AutoLogo.png"
+                  alt="/AutoLogo.png"
+                  className="h-20 w-20"
+                />
               </Link>
             </div>
             <h1 className="text-2xl font-semibold tracking-tight">
@@ -124,14 +136,27 @@ const Page = () => {
 
                 <div className="grid gap-1 py-2">
                   <Label htmlFor="password">Password</Label>
-                  <Input
-                    {...register("password")}
-                    type="password"
-                    className={cn({
-                      "focus-visible:ring-red-500": errors.password,
-                    })}
-                    placeholder="Password"
-                  />
+                  <div className="relative">
+                    <Input
+                      {...register("password")}
+                      type={showPassword ? "text" : "password"} // Conditionally set the type based on visibility state
+                      className={cn({
+                        "focus-visible:ring-red-500": errors.password,
+                      })}
+                      placeholder="Password"
+                    />
+                    <button
+                      type="button"
+                      onClick={togglePasswordVisibility} // Click event to toggle password visibility
+                      className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                    >
+                      {showPassword ? (
+                        <EyeOffIcon className="h-5 w-5 text-gray-400" /> // Icon for hiding password
+                      ) : (
+                        <EyeIcon className="h-5 w-5 text-gray-400" /> // Icon for showing password
+                      )}
+                    </button>
+                  </div>
                   {errors?.password && (
                     <p className="text-sm text-red-500">
                       {errors.password.message}

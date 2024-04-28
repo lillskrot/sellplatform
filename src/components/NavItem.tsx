@@ -1,5 +1,3 @@
-"use client";
-
 import { PRODUCT_CATEGORIES } from "@/config";
 import { Button } from "./ui/button";
 import { ChevronDown } from "lucide-react";
@@ -66,24 +64,29 @@ const NavItem = ({
                       key={item.name}
                       className="group relative text-base sm:text-sm"
                     >
-                      <div className="relative aspect-video overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                        <Image
-                          src={item.imageSrc}
-                          alt="product category image"
-                          fill
-                          className="object-cover object-center"
-                        />
-                      </div>
-
-                      <Link
-                        href={item.href}
-                        className="mt-6 block font-medium text-gray-900"
-                      >
-                        {item.name}
+                      <Link href={item.href}>
+                        {" "}
+                        {/* Wrap the Image with Link */}
+                        <a className="group relative text-base sm:text-sm">
+                          <div className="relative aspect-video overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                            <Image
+                              src={item.imageSrc}
+                              alt="product category image"
+                              fill
+                              className="object-cover object-center"
+                            />
+                          </div>
+                          <Link
+                            href={item.href}
+                            className="mt-6 block font-medium text-gray-900"
+                          >
+                            {item.name}
+                          </Link>
+                          <p className="mt-1" aria-hidden="true">
+                            Shop now
+                          </p>
+                        </a>
                       </Link>
-                      <p className="mt-1" aria-hidden="true">
-                        Shop now
-                      </p>
                     </div>
                   ))}
                 </div>

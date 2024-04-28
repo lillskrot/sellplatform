@@ -56,8 +56,8 @@ export default function Home() {
                     "SF Mono, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 }}
               >
-                Welcome to TUBIS. Every asset on our platform is verified by our
-                team to ensure our highest quality standards.
+                Welcome to AutosAesthetics.com. Every asset on our platform is
+                verified by our team to ensure our highest quality standards.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 mt-6 font-body-bold">

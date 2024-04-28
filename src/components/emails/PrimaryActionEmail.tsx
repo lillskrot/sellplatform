@@ -40,8 +40,8 @@ export const EmailTemplate = ({
           />
           <Text style={paragraph}>Hi there,</Text>
           <Text style={paragraph}>
-            Welcome to TUBIS, the marketplace for high quality TUB products. Use
-            the button below to {actionLabel}.
+            Welcome to AutosAesthetics.com, the marketplace for high quality TUB
+            products. Use the button below to {actionLabel}.
           </Text>
           <Section style={btnContainer}>
             <Button style={button} href={href}>
