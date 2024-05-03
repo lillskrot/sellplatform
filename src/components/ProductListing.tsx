@@ -43,12 +43,24 @@ const ProductListing = ({ product, index }: ProductListingProps) => {
         <div className="flex flex-col w-full relative">
           <ImageSlider urls={validUrls} />
 
-          <h3 className="mt-4 font-medium text-sm text-gray-700 relative">
+          <h3 className="mt-4 font-medium text-sm text-black-1000 relative">
             <span className="h3-background">{product.name}</span>
           </h3>
-          <p className="mt-1 text-sm text-gray-500">{label}</p>
-          <p className="mt-1 font-medium text-sm text-gray-900">
-            {formatPrice(product.price)}
+          <p className="h3-background w-2/3 mt-2 text-sm text-gray-900">
+            {label}
+          </p>
+
+          {/* Display original price with line-through */}
+          <p className="h3-background w-1/4 mt-2 font-medium text-sm text-gray-900">
+            <span>{formatPrice(product.price)}</span>
+          </p>
+
+          {/* Calculate and display 30% more price */}
+          <p className="h3-background w-3/4 mt-2 font-medium text-sm text-gray-700">
+            <span style={{ textDecoration: "line-through" }}>
+              {formatPrice(product.price * 1.3)}
+            </span>{" "}
+            30% discount🎉
           </p>
         </div>
       </Link>

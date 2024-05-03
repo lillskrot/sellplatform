@@ -36,17 +36,17 @@ const Navbar = async () => {
           <span style={{ fontSize: "1.1rem" }}>30</span>% OF ALL PRODUCTS!🎉
         </span>
       </div>
-      <div className="bg-white sticky z-50 top-0 inset-x-0 h-16">
+      <div className="bg-white sticky z-50 top-0 inset-x-0 h-20">
         <header className="relative bg-white">
           <MaxWidthWrapper>
             <div className="border-b border-gray-200">
-              <div className="flex h-16 items-center">
+              <div className="flex h-20 items-center">
                 <MobileNav />
 
                 <div className="ml-4 mt-3 flex lg:ml-0">
                   <Link href="/">
                     {/* Replace the current logo with an image */}
-                    <Image
+                    <img
                       src="/AutoLogo.png"
                       alt="/AutoLogo.png"
                       className="h-20 w-20"
