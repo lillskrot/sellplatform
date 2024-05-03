@@ -2,8 +2,8 @@
 
 import { usePathname } from "next/navigation";
 import MaxWidthWrapper from "./MaxWidthWrapper";
-import { Icons } from "./Icons";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -19,7 +19,7 @@ const Footer = () => {
                 <div className="ml-4 flex lg:ml-0">
                   <Link href="/">
                     {/* Replace the current logo with an image */}
-                    <img
+                    <Image
                       src="/AutoLogo.png"
                       alt="/AutoLogo.png"
                       className="h-20 w-20"

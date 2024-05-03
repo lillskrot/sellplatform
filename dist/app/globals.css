@@ -55,6 +55,10 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image: url("/modern-red-sports-car.png"), url("/Ground2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top, center top; /* Adjusted background positions */
   }
 }
 
@@ -69,4 +73,56 @@
   color: #fff;
   background: white !important;
   scale: 1 !important ;
+}
+
+/* Define the font family */
+:root {
+  --font-heading-family: "Merriweather Sans", sans-serif;
+  --font-body-family: "SF Mono", Menlo, Consolas, Monaco, Liberation Mono,
+    Lucida Console, monospace, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
+}
+
+/* Apply the font family, font weight, and font size to the h1 tag */
+h1 {
+  font-family: var(--font-heading-family);
+  font-weight: 400; /* Font weight 400 */
+  font-size: 33px; /* Font size 33px */
+}
+
+/* Apply text color and font family to paragraphs and divs with class 'font-body' */
+p,
+.font-body {
+  color: rgba(55, 55, 10, 1);
+  font-family: var(--font-body-family);
+}
+
+/* Apply slightly bolder font weight to the 'font-body-bold' class */
+.font-body-bold {
+  font-weight: 500; /* Slightly bolder font weight */
+}
+
+.blurry-background {
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.25); /* Fallback color */
+  /* Optionally, you can adjust the following properties to control the blur effect */
+  /* For example, you can increase or decrease the blur radius */
+  /* Or you can change the background color and opacity */
+}
+
+.h3-background {
+  display: inline-block;
+  position: relative;
+}
+
+.h3-background::before {
+  content: "";
+  position: absolute;
+  top: -0.2rem; /* Adjust to position the square */
+  left: -0.2rem; /* Adjust to position the square */
+  width: calc(100% + 0.4rem); /* Adjust to cover the text width */
+  height: calc(100% + 0.4rem); /* Adjust to cover the text height */
+  background-color: rgba(255, 255, 255, 0.3); /* Transparent white */
+  border-radius: 0.5rem; /* Adjust border radius as needed */
+  z-index: -1;
 }

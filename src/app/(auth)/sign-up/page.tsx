@@ -18,6 +18,7 @@ import { trpc } from "@/trpc/client";
 import { toast } from "sonner";
 import { ZodError } from "zod";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const Page = () => {
   const {
@@ -71,7 +72,7 @@ const Page = () => {
             <div className="ml-4 flex lg:ml-0">
               <Link href="/">
                 {/* Replace the current logo with an image */}
-                <img
+                <Image
                   src="/AutoLogo.png"
                   alt="/AutoLogo.png"
                   className="h-20 w-20"

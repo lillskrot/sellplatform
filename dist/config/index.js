@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PRODUCT_CATEGORIES = void 0;
 exports.PRODUCT_CATEGORIES = [
     {
-        label: "UI Kits",
+        label: "Decals & Stickers",
         value: "ui_kits",
         featured: [
             {
@@ -24,7 +24,7 @@ exports.PRODUCT_CATEGORIES = [
         ],
     },
     {
-        label: "Products",
+        label: "Car Accessories",
         value: "icons",
         featured: [
             {
