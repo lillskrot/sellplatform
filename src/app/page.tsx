@@ -8,8 +8,7 @@ const perks = [
   {
     name: "Fast delivery",
     Icon: ArrowDownToLine,
-    description:
-      "No china bs that takes weeks, get your things in just a couple of days",
+    description: "Fast delivery, takes about 2-5 buisnessday to arrive.",
   },
   {
     name: "For the Planet",
@@ -69,7 +68,6 @@ export default function Home() {
               <Link href="/products" className={buttonVariants()}>
                 Browse Trending
               </Link>
-              <Button variant="ghost">Our quality promise &rarr;</Button>
             </div>
           </div>
         </MaxWidthWrapper>
@@ -95,7 +93,13 @@ export default function Home() {
                 className="text-center md:flex md:items-start md:text-left lg:block lg:text-center shadow-md"
               >
                 <div className="md:flex-shrink-0 flex justify-center">
-                  <div className="h-16 w-16 flex items-center justify-center rounded-full bg-blue-100 text-blue-900">
+                  <div
+                    className="h-16 w-16 flex items-center justify-center rounded-full"
+                    style={{
+                      backgroundColor: "rgb(197,220,248)",
+                      color: "rgb(13,57,94)",
+                    }}
+                  >
                     {<perk.Icon className="w-1/3 h-1/3" />}
                   </div>
                 </div>

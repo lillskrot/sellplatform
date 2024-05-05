@@ -42,16 +42,18 @@ const Footer = () => {
 
                 <div className="text-center relative mx-auto max-w-sm">
                   <h3 className="font-semibold text-gray-900">
-                    Become a seller
+                    Have any issues?
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    If you&apos;d like to sell TUB-products, you can do so in
-                    minutes.{" "}
+                    Please ask any questions you might have to our customer
+                    support email, thanks!{" "}
                     <Link
-                      href="/sign-in?as=seller"
+                      href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlKFQgFTVCsCCkzlFNZxHMCkptWWNCRjHWsKfQRBmRxFZfJxqsxHfhwSDvXtZzpHHXPsFg"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="whitespace-nowrap font-medium text-black hover:text-zinc-900"
                     >
-                      Get started &rarr;
+                      AutosAesthetics@gmail.com &rarr;
                     </Link>
                   </p>
                 </div>
@@ -70,7 +72,7 @@ const Footer = () => {
           <div className="mt-4 flex items-center justify-center md:mt-0">
             <div className="flex space-x-8">
               <Link
-                href="#"
+                href="/Terms&Services"
                 className="text-sm text-muted-foreground hover:text-gray-600"
               >
                 Terms

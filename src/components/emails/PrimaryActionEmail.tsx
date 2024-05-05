@@ -28,7 +28,9 @@ export const EmailTemplate = ({
   return (
     <Html>
       <Head />
-      <Preview>The marketplace for high-quality TUB products.</Preview>
+      <Preview>
+        The marketplace for high-quality AutosAesthetics.com products.
+      </Preview>
       <Body style={main}>
         <Container style={container}>
           <Img
@@ -40,8 +42,8 @@ export const EmailTemplate = ({
           />
           <Text style={paragraph}>Hi there,</Text>
           <Text style={paragraph}>
-            Welcome to AutosAesthetics.com, the marketplace for high quality TUB
-            products. Use the button below to {actionLabel}.
+            Welcome to AutosAesthetics.com, the marketplace for high quality car
+            accessories. Use the button below to {actionLabel}.
           </Text>
           <Section style={btnContainer}>
             <Button style={button} href={href}>
@@ -51,7 +53,7 @@ export const EmailTemplate = ({
           <Text style={paragraph}>
             Best,
             <br />
-            The TUB team
+            The AutosAesthetics.com team
           </Text>
           <Hr style={hr} />
           <Text style={footer}>

@@ -61,7 +61,7 @@ export const authRouter = router({
     .mutation(async ({ input, ctx }) => {
       console.log("inside signIn");
 
-      const { email, password } = input;
+      const { email, password, zipcode, city, address } = input;
       const { res } = ctx;
 
       const payload = await getPayloadClient();
@@ -72,6 +72,9 @@ export const authRouter = router({
           data: {
             email,
             password,
+            zipcode,
+            city,
+            address,
           },
           res,
         });

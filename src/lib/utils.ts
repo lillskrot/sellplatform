@@ -26,8 +26,8 @@ export function formatPrice(
 }
 
 export function constructMetadata({
-  title = "TUB - the marketplace for TUB products",
-  description = "TUB is an open-source marketplace for TUB products.",
+  title = "AutosAesthetics.com - the marketplace for high quality car accessories.",
+  description = "AutosAesthetics.com is an open-source marketplace for car accessories.",
   image = "/thumbnailTUB.png",
   icons = "/favicon.ico",
   noIndex = false,

@@ -99,9 +99,7 @@ const Page = async ({ params }: PageProps) => {
               </div>
 
               <div className="mt-4 space-y-6">
-                <p className="text-base text-muted-foreground">
-                  {product.description}
-                </p>
+                <p className="text-base">{product.description}</p>
               </div>
 
               <div className="mt-6 flex items-center">
@@ -109,9 +107,7 @@ const Page = async ({ params }: PageProps) => {
                   aria-hidden="true"
                   className="h-5 w-5 flex-shrink-0 text-green-500"
                 />
-                <p className="ml-2 text-sm text-muted-foreground">
-                  Eligible for instant shipping
-                </p>
+                <p className="ml-2 text-sm">Eligible for instant shipping</p>
               </div>
             </section>
           </div>
@@ -135,7 +131,7 @@ const Page = async ({ params }: PageProps) => {
                     aria-hidden="true"
                     className="mr-2 h-5 w-5 flex-shrink-0 text-gray-900"
                   />
-                  <span className="text-muted-foreground hover:text-gray-700">
+                  <span className="hover:text-gray-700">
                     30 Day Return Guarantee
                   </span>
                 </div>

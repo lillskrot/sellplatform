@@ -43,9 +43,18 @@ const ProductListing = ({ product, index }: ProductListingProps) => {
         <div className="flex flex-col w-full relative">
           <ImageSlider urls={validUrls} />
 
-          <h3 className="mt-4 font-medium text-sm text-black-1000 relative">
+          <h3 className="mt-4 font-medium text-sm text-black-1000 relative flex items-center">
             <span className="h3-background">{product.name}</span>
+            <span
+              className="text-green-500 ml-3 text-sm cursor-pointer"
+              title="In Storage"
+              onMouseEnter={(e) => (e.target.textContent = "In Storage")}
+              onMouseLeave={(e) => (e.target.textContent = "\u25cf")}
+            >
+              &#x25cf;
+            </span>
           </h3>
+
           <p className="h3-background w-2/3 mt-2 text-sm text-gray-900">
             {label}
           </p>

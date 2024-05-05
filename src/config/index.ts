@@ -1,43 +1,43 @@
 export const PRODUCT_CATEGORIES = [
   {
     label: "Decals & Stickers",
-    value: "ui_kits" as const,
+    value: "Decals_Stickers" as const,
     featured: [
       {
-        name: "Bestsellers",
-        href: "/products?category=ui_kits&sort=desc",
-        imageSrc: "/nav/ui-kits/wanted1-1024x1365.webp",
+        name: "GTA Wanted Sign",
+        href: "/products?category=Decals_Stickers&sort=desc",
+        imageSrc: "/nav/Decals_Stickers/wanted1-1024x1365.webp",
       },
       {
-        name: "New Arrivals",
-        href: "/products?category=ui_kits",
-        imageSrc: "/nav/ui-kits/shifter_hoodie.jpg",
+        name: "Electric Hearts",
+        href: "/products?category=Decals_Stickers",
+        imageSrc: "/nav/Decals_Stickers/shifter_hoodie.jpg",
       },
       {
-        name: "Customer Favorites",
-        href: "/products?category=gadgets",
-        imageSrc: "/nav/ui-kits/GlowMat.png",
+        name: "Number Plate Frame",
+        href: "/products?category=Decals_Stickers",
+        imageSrc: "/nav/Decals_Stickers/GlowMat.png",
       },
     ],
   },
   {
     label: "Car Accessories",
-    value: "icons" as const,
+    value: "CarAccessories" as const,
     featured: [
       {
-        name: "Bestsellers",
-        href: `/products?category=icons`,
-        imageSrc: "/nav/icons/",
+        name: "Floor Mats",
+        href: `/products?category=CarAccessories`,
+        imageSrc: "/nav/CarAccessories/",
       },
       {
-        name: "New Arrivals",
-        href: "/products?category=icons&sort=desc",
-        imageSrc: "/nav/icons/",
+        name: "Example2",
+        href: "/products?category=CarAccessories&sort=desc",
+        imageSrc: "/nav/CarAccessories/",
       },
       {
-        name: "Customer Favorites",
-        href: "/products?category=gadgets",
-        imageSrc: "/nav/gadgets/",
+        name: "Example2",
+        href: "/products?category=CarAccessories",
+        imageSrc: "/nav/CarAccessories/",
       },
     ],
   },
@@ -46,17 +46,17 @@ export const PRODUCT_CATEGORIES = [
     value: "gadgets" as const,
     featured: [
       {
-        name: "Bestsellers",
+        name: "Shifter Hoodie",
         href: "/products?category=gadgets&sort=desc",
         imageSrc: "/nav/gadgets/new_arrivals.jpg",
       },
       {
-        name: "New Arrivals",
+        name: "Device Holders",
         href: "/products?category=gadgets",
         imageSrc: "/nav/gadgets/bestsellers.jpg",
       },
       {
-        name: "Customer Favorites",
+        name: "Rearview Mirror Charms",
         href: "/products?category=gadgets",
         imageSrc: "/nav/gadgets/bestsellers.jpg",
       },

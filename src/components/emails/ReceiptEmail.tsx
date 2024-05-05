@@ -39,7 +39,7 @@ export const ReceiptEmail = ({
   return (
     <Html>
       <Head />
-      <Preview>Your TUB Receipt</Preview>
+      <Preview>Your AutosAesthetics.com Receipt</Preview>
 
       <Body style={main}>
         <Container style={container}>
@@ -117,12 +117,6 @@ export const ReceiptEmail = ({
                         : product.description}
                     </Text>
                   ) : null}
-                  <Link
-                    href={`${process.env.NEXT_PUBLIC_SERVER_URL}/thank-you?orderId=${orderId}`}
-                    style={productLink}
-                  >
-                    Download Asset
-                  </Link>
                 </Column>
 
                 <Column style={productPriceWrapper} align="right">
@@ -164,7 +158,7 @@ export const ReceiptEmail = ({
             <Link href="#">Privacy Policy </Link>
           </Text>
           <Text style={footerCopyright}>
-            Copyright © 2024 TUB Inc. <br />{" "}
+            Copyright © 2024 AutosAesthetics.com Inc. <br />{" "}
             <Link href="#">All rights reserved</Link>
           </Text>
         </Container>

@@ -1,2 +1,2 @@
-export const SENDER_EMAIL = "leo@lillskrot.se";
-export const SENDER_NAME = "Tub";
+export const SENDER_EMAIL = "autosaesthetics@gmail.com";
+export const SENDER_NAME = "AutosAesthetics.com";

@@ -67,13 +67,12 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
               Order successful
             </p>
             <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              Thanks for ordering
+              Thank you for your order!
             </h1>
             {order._isPaid ? (
               <p className="mt-2 text-base text-muted-foreground">
-                Your order was processed and your assets are available to
-                download below. We&apos;ve sent your receipt and order details
-                to{" "}
+                Your order has been processed. We&apos;ve sent you the order
+                details to{" "}
                 {typeof order.user !== "string" ? (
                   <span className="font-medium text-gray-900">
                     {order.user.email}
@@ -123,16 +122,6 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
 
                           <p className="my-1">Category: {label}</p>
                         </div>
-
-                        {order._isPaid ? (
-                          <a
-                            href={downloadUrl}
-                            download={product.name}
-                            className="text-blue-600 hover:underline underline-offset-2"
-                          >
-                            Download asset
-                          </a>
-                        ) : null}
                       </div>
 
                       <p className="flex-none font-medium text-gray-900">
