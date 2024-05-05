@@ -17,7 +17,7 @@ const TermsOfService: React.FC = () => {
       />
       <div>
         <h1 style={{ fontWeight: "bold", fontFamily: "Arial, sans-serif" }}>
-          Terms of Service
+          Terms of Service.
         </h1>
         <p>
           Welcome to AutosAesthetics.com! These terms outline the rules and
