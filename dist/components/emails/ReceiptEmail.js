@@ -44,7 +44,7 @@ var ReceiptEmail = function (_a) {
     var total = products.reduce(function (acc, curr) { return acc + curr.price; }, 0) + 1;
     return (React.createElement(components_1.Html, null,
         React.createElement(components_1.Head, null),
-        React.createElement(components_1.Preview, null, "Your TUB Receipt"),
+        React.createElement(components_1.Preview, null, "Your AutosAesthetics.com Receipt"),
         React.createElement(components_1.Body, { style: main },
             React.createElement(components_1.Container, { style: container },
                 React.createElement(components_1.Section, null,
@@ -74,8 +74,7 @@ var ReceiptEmail = function (_a) {
                             React.createElement(components_1.Text, { style: productTitle }, product.name),
                             product.description ? (React.createElement(components_1.Text, { style: productDescription }, product.description.length > 50
                                 ? ((_a = product.description) === null || _a === void 0 ? void 0 : _a.slice(0, 50)) + "..."
-                                : product.description)) : null,
-                            React.createElement(components_1.Link, { href: "".concat(process.env.NEXT_PUBLIC_SERVER_URL, "/thank-you?orderId=").concat(orderId), style: productLink }, "Download Asset")),
+                                : product.description)) : null),
                         React.createElement(components_1.Column, { style: productPriceWrapper, align: "right" },
                             React.createElement(components_1.Text, { style: productPrice }, (0, utils_1.formatPrice)(product.price)))));
                 }),
@@ -104,7 +103,7 @@ var ReceiptEmail = function (_a) {
                     " ",
                     React.createElement(components_1.Link, { href: "#" }, "Privacy Policy ")),
                 React.createElement(components_1.Text, { style: footerCopyright },
-                    "Copyright \u00A9 2024 TUB Inc. ",
+                    "Copyright \u00A9 2024 AutosAesthetics.com Inc. ",
                     React.createElement("br", null),
                     " ",
                     React.createElement(components_1.Link, { href: "#" }, "All rights reserved"))))));

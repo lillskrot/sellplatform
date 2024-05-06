@@ -117,12 +117,12 @@ exports.authRouter = (0, trpc_1.router)({
         .mutation(function (_a) {
         var input = _a.input, ctx = _a.ctx;
         return __awaiter(void 0, void 0, void 0, function () {
-            var email, password, res, payload, err_1;
+            var email, password, zipcode, city, address, res, payload, err_1;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
                         console.log("inside signIn");
-                        email = input.email, password = input.password;
+                        email = input.email, password = input.password, zipcode = input.zipcode, city = input.city, address = input.address;
                         res = ctx.res;
                         return [4 /*yield*/, (0, get_payload_1.getPayloadClient)()];
                     case 1:

@@ -4,43 +4,64 @@ exports.PRODUCT_CATEGORIES = void 0;
 exports.PRODUCT_CATEGORIES = [
     {
         label: "Decals & Stickers",
-        value: "ui_kits",
+        value: "Decals_Stickers",
         featured: [
             {
-                name: "Editor picks",
-                href: "/products?category=ui_kits",
-                imageSrc: "/nav/ui-kits/mixed.jpg",
+                name: "GTA Wanted Sign",
+                href: "/products?category=Decals_Stickers&sort=desc",
+                imageSrc: "/nav/Decals_Stickers/wanted1-1024x1365.webp",
             },
             {
-                name: "New Arrivals",
-                href: "/products?category=ui_kits&sort=desc",
-                imageSrc: "/nav/ui-kits/blue.jpg",
+                name: "Electric Hearts",
+                href: "/products?category=Decals_Stickers",
+                imageSrc: "/nav/Decals_Stickers/shifter_hoodie.jpg",
             },
             {
-                name: "Bestsellers",
-                href: "/products?category=ui_kits",
-                imageSrc: "/nav/ui-kits/purple.jpg",
+                name: "Number Plate Frame",
+                href: "/products?category=Decals_Stickers",
+                imageSrc: "/nav/Decals_Stickers/GlowMat.png",
             },
         ],
     },
     {
         label: "Car Accessories",
-        value: "icons",
+        value: "CarAccessories",
         featured: [
             {
-                name: "Favorite Icon Picks",
-                href: "/products?category=icons",
-                imageSrc: "/nav/icons/picks.jpg",
+                name: "Floor Mats",
+                href: "/products?category=CarAccessories",
+                imageSrc: "/nav/CarAccessories/",
             },
             {
-                name: "New Arrivals",
-                href: "/products?category=icons&sort=desc",
-                imageSrc: "/nav/icons/new.jpg",
+                name: "Example2",
+                href: "/products?category=CarAccessories&sort=desc",
+                imageSrc: "/nav/CarAccessories/",
             },
             {
-                name: "Bestselling Icons",
-                href: "/products?category=icons",
-                imageSrc: "/nav/icons/bestsellers.jpg",
+                name: "Example2",
+                href: "/products?category=CarAccessories",
+                imageSrc: "/nav/CarAccessories/",
+            },
+        ],
+    },
+    {
+        label: "Gadgets",
+        value: "gadgets",
+        featured: [
+            {
+                name: "Shifter Hoodie",
+                href: "/products?category=gadgets&sort=desc",
+                imageSrc: "/nav/gadgets/new_arrivals.jpg",
+            },
+            {
+                name: "Device Holders",
+                href: "/products?category=gadgets",
+                imageSrc: "/nav/gadgets/bestsellers.jpg",
+            },
+            {
+                name: "Rearview Mirror Charms",
+                href: "/products?category=gadgets",
+                imageSrc: "/nav/gadgets/bestsellers.jpg",
             },
         ],
     },

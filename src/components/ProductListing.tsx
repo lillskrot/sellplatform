@@ -48,8 +48,6 @@ const ProductListing = ({ product, index }: ProductListingProps) => {
             <span
               className="text-green-500 ml-3 text-sm cursor-pointer"
               title="In Storage"
-              onMouseEnter={(e) => (e.target.textContent = "In Storage")}
-              onMouseLeave={(e) => (e.target.textContent = "\u25cf")}
             >
               &#x25cf;
             </span>

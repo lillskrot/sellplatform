@@ -41,13 +41,13 @@ var EmailTemplate = function (_a) {
     var actionLabel = _a.actionLabel, buttonText = _a.buttonText, href = _a.href;
     return (React.createElement(components_1.Html, null,
         React.createElement(components_1.Head, null),
-        React.createElement(components_1.Preview, null, "The marketplace for high-quality TUB products."),
+        React.createElement(components_1.Preview, null, "The marketplace for high-quality AutosAesthetics.com products."),
         React.createElement(components_1.Body, { style: main },
             React.createElement(components_1.Container, { style: container },
                 React.createElement(components_1.Img, { src: "".concat(process.env.NEXT_PUBLIC_SERVER_URL, "/hippo-newsletter-sign-up.png"), width: "150", height: "150", alt: "DigitalHippo", style: logo }),
                 React.createElement(components_1.Text, { style: paragraph }, "Hi there,"),
                 React.createElement(components_1.Text, { style: paragraph },
-                    "Welcome to TUBIS, the marketplace for high quality TUB products. Use the button below to ",
+                    "Welcome to AutosAesthetics.com, the marketplace for high quality car accessories. Use the button below to ",
                     actionLabel,
                     "."),
                 React.createElement(components_1.Section, { style: btnContainer },
@@ -55,7 +55,7 @@ var EmailTemplate = function (_a) {
                 React.createElement(components_1.Text, { style: paragraph },
                     "Best,",
                     React.createElement("br", null),
-                    "The TUB team"),
+                    "The AutosAesthetics.com team"),
                 React.createElement(components_1.Hr, { style: hr }),
                 React.createElement(components_1.Text, { style: footer }, "If you did not request this email, you can safely ignore it.")))));
 };
@@ -84,7 +84,7 @@ var btnContainer = {
 };
 var button = {
     padding: "12px 12px",
-    backgroundColor: "#2563eb",
+    backgroundColor: "#0d395e",
     borderRadius: "3px",
     color: "#fff",
     fontSize: "16px",

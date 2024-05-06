@@ -72,9 +72,6 @@ export const authRouter = router({
           data: {
             email,
             password,
-            zipcode,
-            city,
-            address,
           },
           res,
         });

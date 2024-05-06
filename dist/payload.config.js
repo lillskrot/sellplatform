@@ -27,7 +27,7 @@ exports.default = (0, config_1.buildConfig)({
         user: "users",
         bundler: (0, bundler_webpack_1.webpackBundler)(),
         meta: {
-            titleSuffix: "- TUBEN",
+            titleSuffix: "- AutosAesthetics.com",
             favicon: "/favicon.ico",
             ogImage: "/thumbnailTUB.jpg",
         },
