@@ -58,7 +58,7 @@ export function constructMetadata({
       creator: "@LeoTaube",
     },
     icons,
-    metadataBase: new URL("https://sellplatform.up.railway.app"),
+    metadataBase: new URL("https://www.autosaesthetics.com"),
     ...(noIndex && {
       robots: {
         index: false,

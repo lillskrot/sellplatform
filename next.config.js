@@ -4,7 +4,7 @@ const { withPayload } = require("@payloadcms/next-payload");
 const nextConfig = withPayload(
   {
     images: {
-      domains: ["localhost", "sellplatform-production.up.railway.app"],
+      domains: ["localhost", "https://www.autosaesthetics.com"],
     },
   },
   {
