@@ -74,7 +74,8 @@ var ReceiptEmail = function (_a) {
                             React.createElement(components_1.Text, { style: productTitle }, product.name),
                             product.description ? (React.createElement(components_1.Text, { style: productDescription }, product.description.length > 50
                                 ? ((_a = product.description) === null || _a === void 0 ? void 0 : _a.slice(0, 50)) + "..."
-                                : product.description)) : null),
+                                : product.description)) : null,
+                            React.createElement(components_1.Link, { href: "".concat(process.env.NEXT_PUBLIC_SERVER_URL, "/thank-you?orderId=").concat(orderId), style: productLink }, "Download Asset")),
                         React.createElement(components_1.Column, { style: productPriceWrapper, align: "right" },
                             React.createElement(components_1.Text, { style: productPrice }, (0, utils_1.formatPrice)(product.price)))));
                 }),

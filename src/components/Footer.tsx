@@ -19,7 +19,7 @@ const Footer = () => {
                 <div className="ml-4 flex lg:ml-0">
                   <Link href="/">
                     {/* Replace the current logo with an image */}
-                    <Image
+                    <img
                       src="/AutoLogo.png"
                       alt="/AutoLogo.png"
                       className="h-20 w-20"

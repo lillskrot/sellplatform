@@ -11,12 +11,12 @@ export const PRODUCT_CATEGORIES = [
       {
         name: "Electric Hearts",
         href: "/products?category=Decals_Stickers",
-        imageSrc: "/nav/Decals_Stickers/shifter_hoodie.jpg",
+        imageSrc: "/nav/decals_stickers/heart1.png",
       },
       {
-        name: "Number Plate Frame",
+        name: "Boost Loading Sticker",
         href: "/products?category=Decals_Stickers",
-        imageSrc: "/nav/Decals_Stickers/GlowMat.png",
+        imageSrc: "/nav/decals_stickers/ledusbboostloading1.jpg",
       },
     ],
   },
@@ -27,7 +27,7 @@ export const PRODUCT_CATEGORIES = [
       {
         name: "Floor Mats",
         href: `/products?category=CarAccessories`,
-        imageSrc: "/nav/CarAccessories/",
+        imageSrc: "/nav/decals_stickers/GlowMat.png",
       },
       {
         name: "Example2",
@@ -48,17 +48,17 @@ export const PRODUCT_CATEGORIES = [
       {
         name: "Shifter Hoodie",
         href: "/products?category=gadgets&sort=desc",
-        imageSrc: "/nav/gadgets/new_arrivals.jpg",
+        imageSrc: "/nav/decals_stickers/shifter_hoodie.jpg",
       },
       {
         name: "Device Holders",
         href: "/products?category=gadgets",
-        imageSrc: "/nav/gadgets/bestsellers.jpg",
+        imageSrc: "/nav/decals_stickers/phoneholder.jpg",
       },
       {
         name: "Rearview Mirror Charms",
         href: "/products?category=gadgets",
-        imageSrc: "/nav/gadgets/bestsellers.jpg",
+        imageSrc: "/nav/decals_stickers/7198gP0UgxL._AC_UF1000,1000_QL80_.jpg",
       },
     ],
   },
