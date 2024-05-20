@@ -97,6 +97,8 @@ const Page = () => {
                   src="/AutoLogo.png"
                   alt="/AutoLogo.png"
                   className="h-20 w-20"
+                  width={100}
+                  height={100}
                 />
               </Link>
             </div>
