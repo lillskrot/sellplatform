@@ -122,7 +122,19 @@ const Page = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid gap-2">
                 <div className="grid gap-1 py-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label
+                    htmlFor="email"
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.6)",
+                      backdropFilter: "blur(5px)",
+                      padding: "4px 8px", // Increase padding for a bit taller background
+                      display: "inline-block",
+                      borderRadius: "5px", // Round corners
+                      width: "fit-content", // Set width to fit the content
+                    }}
+                  >
+                    Email
+                  </Label>
                   <Input
                     {...register("email")}
                     className={cn({
@@ -138,7 +150,19 @@ const Page = () => {
                 </div>
 
                 <div className="grid gap-1 py-2">
-                  <Label htmlFor="password">Password</Label>
+                  <Label
+                    htmlFor="password"
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.6)",
+                      backdropFilter: "blur(5px)",
+                      padding: "2px 4px", // Increase padding for a bit taller background
+                      display: "inline-block",
+                      borderRadius: "5px", // Round corners
+                      width: "fit-content", // Set width to fit the content
+                    }}
+                  >
+                    Password
+                  </Label>
                   <div className="relative">
                     <Input
                       {...register("password")}
@@ -168,7 +192,19 @@ const Page = () => {
                 </div>
 
                 <div className="grid gap-1 py-2">
-                  <Label htmlFor="address">Address</Label>
+                  <Label
+                    htmlFor="address"
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.6)",
+                      backdropFilter: "blur(5px)",
+                      padding: "2px 4px", // Increase padding for a bit taller background
+                      display: "inline-block",
+                      borderRadius: "5px", // Round corners
+                      width: "fit-content", // Set width to fit the content
+                    }}
+                  >
+                    Address
+                  </Label>
                   <Input
                     {...register("address")}
                     type="address"
@@ -185,7 +221,17 @@ const Page = () => {
                 </div>
 
                 <div className="py-2">
-                  <Label htmlFor="zipcode">
+                  <Label
+                    htmlFor="zipcode"
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.6)",
+                      backdropFilter: "blur(2px)",
+                      padding: "2px 4px", // Increase padding for a bit taller background
+                      display: "inline-block",
+                      borderRadius: "5px", // Round corners
+                      width: "fit-content", // Set width to fit the content
+                    }}
+                  >
                     Zipcode and city - for shipping
                   </Label>
                   <div className="flex">
@@ -231,14 +277,7 @@ const Page = () => {
               <div
                 aria-hidden="true"
                 className="absolute inset-0 flex items-center"
-              >
-                <span className="w-full border-t" />
-              </div>
-              <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-background px-2 text-muted-foreground">
-                  or
-                </span>
-              </div>
+              />
             </div>
 
             {isSeller ? (
@@ -249,15 +288,7 @@ const Page = () => {
               >
                 Continue as customer
               </Button>
-            ) : (
-              <Button
-                onClick={continueAsSeller}
-                variant="secondary"
-                disabled={isLoading}
-              >
-                Continue as seller
-              </Button>
-            )}
+            ) : null}
           </div>
         </div>
       </div>
