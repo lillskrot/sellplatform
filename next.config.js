@@ -4,7 +4,18 @@ const { withPayload } = require("@payloadcms/next-payload");
 const nextConfig = withPayload(
   {
     images: {
-      domains: ["localhost", "https://www.autosaesthetics.com"],
+      remotePatterns: [
+        {
+          protocol: "http",
+          hostname: "localhost",
+          pathname: "**",
+        },
+        {
+          protocol: "https",
+          hostname: "www.autosaesthetics.com",
+          pathname: "**",
+        },
+      ],
     },
   },
   {

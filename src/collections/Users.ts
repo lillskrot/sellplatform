@@ -38,17 +38,17 @@ export const Users: CollectionConfig = {
     {
       name: "zipcode",
       label: "Zipcode",
-      type: "richText",
+      type: "text",
     },
     {
       name: "city",
       label: "City",
-      type: "richText",
+      type: "text",
     },
     {
       name: "address",
       label: "Address",
-      type: "richText",
+      type: "text",
     },
     {
       name: "products",
