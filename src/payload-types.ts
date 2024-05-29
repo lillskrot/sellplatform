@@ -45,7 +45,7 @@ export interface Product {
   name: string;
   description?: string | null;
   price: number;
-  category: "Decals_Stickers" | "CarAccessories" | "gadgets";
+  category: "Decals_Stickers" | "CarAccessories";
   product_files: string | ProductFile;
   approvedForSale?: ("pending" | "approved" | "denied") | null;
   priceId?: string | null;

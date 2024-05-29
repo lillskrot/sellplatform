@@ -30,35 +30,14 @@ export const PRODUCT_CATEGORIES = [
         imageSrc: "/nav/decals_stickers/GlowMat.png",
       },
       {
-        name: "More items coming soon!",
-        href: "/products?category=CarAccessories",
-        imageSrc: "/nav/decals_stickers/ComingSoon.png",
-      },
-      {
-        name: "More items coming soon!",
-        href: "/products?category=CarAccessories",
-        imageSrc: "/nav/decals_stickers/ComingSoon.png",
-      },
-    ],
-  },
-  {
-    label: "Gadgets",
-    value: "gadgets" as const,
-    featured: [
-      {
         name: "Shifter Hoodie",
-        href: "/products?category=gadgets&sort=desc",
+        href: "/products?category=CarAccessories",
         imageSrc: "/nav/decals_stickers/shifter_hoodie.jpg",
       },
       {
-        name: "Device Holders",
-        href: "/products?category=gadgets",
-        imageSrc: "/nav/decals_stickers/phoneholder.jpg",
-      },
-      {
-        name: "Rearview Mirror Charms",
-        href: "/products?category=gadgets",
-        imageSrc: "/nav/decals_stickers/7198gP0UgxL._AC_UF1000,1000_QL80_.jpg",
+        name: "Screen Holder",
+        href: "/products?category=CarAccessories",
+        imageSrc: "/nav/decals_stickers/screenholder.png",
       },
     ],
   },
