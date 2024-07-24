@@ -56,12 +56,12 @@ const Page = () => {
   const onSubmit = ({
     email,
     password,
-    zipcode,
+    postalcode,
     city,
     address,
   }: TAuthCredentialsValidator) => {
-    console.log("ON SUBMIT", email, password, zipcode, city, address);
-    mutate({ email, password, zipcode, city, address });
+    console.log("ON SUBMIT", email, password, postalcode, city, address);
+    mutate({ email, password, postalcode, city, address });
   };
 
   return (
@@ -151,17 +151,15 @@ const Page = () => {
                 </div>
 
                 <div className="py-2">
-                  <Label htmlFor="zipcode">
-                    Zipcode and city - for shipping
-                  </Label>
+                  <Label htmlFor="postalcode">postalcode and town/city</Label>
                   <div className="flex">
                     <Input
-                      {...register("zipcode")}
-                      type="zipcode"
+                      {...register("postalcode")}
+                      type="postalcode"
                       className={cn("w-1/2 mr-2", {
-                        "focus-visible:ring-red-500": errors.zipcode,
+                        "focus-visible:ring-red-500": errors.postalcode,
                       })}
-                      placeholder="Zipcode"
+                      placeholder="postalcode"
                     />
                     <Input
                       {...register("city")}
@@ -169,12 +167,12 @@ const Page = () => {
                       className={cn("w-1/2", {
                         "focus-visible:ring-red-500": errors.city,
                       })}
-                      placeholder="City"
+                      placeholder="Town/City"
                     />
                   </div>
-                  {errors?.zipcode && (
+                  {errors?.postalcode && (
                     <p className="text-sm text-red-500">
-                      {errors.zipcode.message}
+                      {errors.postalcode.message}
                     </p>
                   )}
                   {errors?.city && (

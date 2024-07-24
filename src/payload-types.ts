@@ -26,7 +26,7 @@ export interface User {
   updatedAt: string;
   createdAt: string;
   email: string;
-  zipcode: string;
+  postalcode: string;
   city: string;
   address: string;
   resetPasswordToken?: string | null;

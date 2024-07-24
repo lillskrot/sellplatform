@@ -33,7 +33,7 @@ const Navbar = async () => {
             fontFamily: "'Merriweather Sans', sans-serif",
           }}
         >
-          <span style={{ fontSize: "1.1rem" }}>30</span>% OF ALL PRODUCTS!🎉
+          <span style={{ fontSize: "1.1rem" }}>30</span>% OFF ALL PRODUCTS!🎉
         </span>
       </div>
       <div className="bg-white sticky z-50 top-0 inset-x-0 h-20">

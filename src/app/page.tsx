@@ -8,7 +8,7 @@ const perks = [
   {
     name: "Fast delivery",
     Icon: ArrowDownToLine,
-    description: "Fast delivery, takes about 2-5 buisnessday to arrive.",
+    description: "Fast delivery, takes about 2-5 business days to arrive.",
   },
   {
     name: "For the Planet",
@@ -34,7 +34,7 @@ export default function Home() {
                 className="text-blue-800"
                 style={{ color: "rgb(89, 122, 157)" }}
               >
-                Car accessories
+                Car models
               </span>
             </h1>
             <div style={{ position: "relative" }}>
@@ -52,21 +52,10 @@ export default function Home() {
                   padding: "0px", // Adjust padding as needed
                 }}
               ></div>
-              <p
-                className="mt-6 text-lg max-w-prose"
-                style={{
-                  color: "rgba(0, 0, 0, 0.7)",
-                  fontFamily:
-                    "SF Mono, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
-                }}
-              >
-                Welcome to AutosAesthetics.com. Every asset on our platform is
-                verified by our team to ensure our highest quality standards.
-              </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 mt-6 font-body-bold">
               <Link href="/products" className={buttonVariants()}>
-                Browse Trending
+                Shop Now
               </Link>
             </div>
           </div>
@@ -75,15 +64,31 @@ export default function Home() {
 
       <section
         className="border-t border-gray-200 bg-white"
-        style={{ marginTop: "28%" }}
+        style={{ marginTop: "13%" }}
       >
         <MaxWidthWrapper className="py-">
-          <div style={{ marginBottom: "200px" }}>
-            <ProductReel
-              query={{ sort: "desc", limit: 4 }}
-              href="/products?sort=recent"
-              title="Top Rated"
-            />
+          <div className="mb-4 text-left">
+            <h2 className="text-2xl font-normal text-gray-800 mb-6 mt-6">
+              Our Collections:
+            </h2>
+          </div>
+          <div className="flex flex-col lg:flex-row gap-4 mb-8">
+            <div className="flex-none w-full h-80 sm:w-96 sm:h-96 lg:w-96 lg:h-96">
+              <ProductReel
+                query={{ sort: "desc", limit: 0 }}
+                href="/products?category=Decals_Stickers"
+                linkText="1:18 Scale Models"
+                imageSrc="/vitModelBil.png"
+              />
+            </div>
+            <div className="flex-none w-full h-80 sm:w-96 sm:h-96 lg:w-96 lg:h-96">
+              <ProductReel
+                query={{ sort: "desc", limit: 0 }}
+                href="/products?category=CarAccessories"
+                linkText="1:24 Scale Models"
+                imageSrc="/svartModelBil.png"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">

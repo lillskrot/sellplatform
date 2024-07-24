@@ -8,7 +8,7 @@ export const authRouter = router({
   createPayloadUser: publicProcedure
     .input(AuthCredentialsValidator)
     .mutation(async ({ input }) => {
-      const { email, password, zipcode, city, address } = input;
+      const { email, password, postalcode, city, address } = input;
 
       const payload = await getPayloadClient();
 
@@ -29,7 +29,7 @@ export const authRouter = router({
         data: {
           email: email,
           password,
-          zipcode: zipcode,
+          postalcode: postalcode,
           city: city,
           address: address,
           role: "user",
@@ -46,12 +46,12 @@ export const authRouter = router({
 
       const payload = await getPayloadClient();
 
-      const isVerified = await payload.verifyEmail({
-        collection: "users",
-        token,
-      });
+      //const isVerified = await payload.verifyEmail({
+      //collection: "users",
+      //token,
+      //});
 
-      if (!isVerified) throw new TRPCError({ code: "UNAUTHORIZED" });
+      //if (!isVerified) throw new TRPCError({ code: "UNAUTHORIZED" });
 
       return { success: true };
     }),
@@ -61,7 +61,7 @@ export const authRouter = router({
     .mutation(async ({ input, ctx }) => {
       console.log("inside signIn");
 
-      const { email, password, zipcode, city, address } = input;
+      const { email, password, postalcode, city, address } = input;
       const { res } = ctx;
 
       const payload = await getPayloadClient();
@@ -78,7 +78,7 @@ export const authRouter = router({
 
         return { success: true };
       } catch (err) {
-        throw new TRPCError({ code: "UNAUTHORIZED" });
+        //throw new TRPCError({ code: "UNAUTHORIZED" });
       }
     }),
 });

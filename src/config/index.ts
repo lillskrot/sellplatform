@@ -1,6 +1,6 @@
 export const PRODUCT_CATEGORIES = [
-  {
-    label: "Decals & Stickers",
+  /*{
+    label: "1:24 Scale Models",
     value: "Decals_Stickers" as const,
     featured: [
       {
@@ -21,7 +21,7 @@ export const PRODUCT_CATEGORIES = [
     ],
   },
   {
-    label: "Car Accessories",
+    label: "1:18 Scale Models",
     value: "CarAccessories" as const,
     featured: [
       {
@@ -40,5 +40,5 @@ export const PRODUCT_CATEGORIES = [
         imageSrc: "/nav/decals_stickers/screenholder.png",
       },
     ],
-  },
+  },*/
 ];

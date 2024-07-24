@@ -70,7 +70,7 @@ const Page = () => {
     },
     onError: (err) => {
       if (err.data?.code === "UNAUTHORIZED") {
-        toast.error("Invalid email/password/zipcode/city/address.");
+        toast.error("Invalid email/password/postalcode/town/city/address.");
       }
     },
   });
@@ -78,11 +78,11 @@ const Page = () => {
   const onSubmit = ({
     email,
     password,
-    zipcode,
+    postalcode,
     city,
     address,
   }: TAuthCredentialsValidator) => {
-    signIn({ email, password, zipcode, city, address });
+    signIn({ email, password, postalcode, city, address });
   };
 
   return (
@@ -103,7 +103,7 @@ const Page = () => {
               </Link>
             </div>
             <h1 className="text-2xl font-semibold tracking-tight">
-              Sign in to your {isSeller ? "seller" : ""} account
+              1. Add an {isSeller ? "seller" : ""} address
             </h1>
 
             <Link
@@ -133,14 +133,14 @@ const Page = () => {
                       width: "fit-content", // Set width to fit the content
                     }}
                   >
-                    Email
+                    Phone number
                   </Label>
                   <Input
                     {...register("email")}
                     className={cn({
                       "focus-visible:ring-red-500": errors.email,
                     })}
-                    placeholder="you@example.com"
+                    placeholder="Enter a mobile number for SMS notifications"
                   />
                   {errors?.email && (
                     <p className="text-sm text-red-500">
@@ -203,7 +203,7 @@ const Page = () => {
                       width: "fit-content", // Set width to fit the content
                     }}
                   >
-                    Address
+                    Street address
                   </Label>
                   <Input
                     {...register("address")}
@@ -211,7 +211,7 @@ const Page = () => {
                     className={cn({
                       "focus-visible:ring-red-500": errors.address,
                     })}
-                    placeholder="Address"
+                    placeholder="Street and number"
                   />
                   {errors?.address && (
                     <p className="text-sm text-red-500">
@@ -222,7 +222,7 @@ const Page = () => {
 
                 <div className="py-2">
                   <Label
-                    htmlFor="zipcode"
+                    htmlFor="postalcode"
                     style={{
                       backgroundColor: "rgba(255, 255, 255, 0.6)",
                       backdropFilter: "blur(2px)",
@@ -232,16 +232,16 @@ const Page = () => {
                       width: "fit-content", // Set width to fit the content
                     }}
                   >
-                    Zipcode and city - for shipping
+                    Postcode
                   </Label>
                   <div className="flex">
                     <Input
-                      {...register("zipcode")}
-                      type="zipcode"
+                      {...register("postalcode")}
+                      type="postalcode"
                       className={cn("w-1/2 mr-2", {
-                        "focus-visible:ring-red-500": errors.zipcode,
+                        "focus-visible:ring-red-500": errors.postalcode,
                       })}
-                      placeholder="Zipcode"
+                      placeholder="Enter a 5-digit postcode"
                     />
                     <Input
                       {...register("city")}
@@ -249,12 +249,12 @@ const Page = () => {
                       className={cn("w-1/2", {
                         "focus-visible:ring-red-500": errors.city,
                       })}
-                      placeholder="City"
+                      placeholder="e.g. New York"
                     />
                   </div>
-                  {errors?.zipcode && (
+                  {errors?.postalcode && (
                     <p className="text-sm text-red-500">
-                      {errors.zipcode.message}
+                      {errors.postalcode.message}
                     </p>
                   )}
                   {errors?.city && (
