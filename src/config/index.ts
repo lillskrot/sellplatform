@@ -1,6 +1,6 @@
 export const PRODUCT_CATEGORIES = [
   {
-    label: "1:18 Scale Models",
+    label: "1_18",
     value: "1_18" as const,
     featured: [
       {
@@ -21,7 +21,7 @@ export const PRODUCT_CATEGORIES = [
     ],
   },
   {
-    label: "1:24 Scale Models",
+    label: "1_24",
     value: "1_24" as const,
     featured: [
       {
