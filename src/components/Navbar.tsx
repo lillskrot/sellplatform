@@ -57,7 +57,9 @@ const Navbar = async () => {
                 </div>
 
                 <div className="hidden z-50 lg:ml-8 lg:block lg:self-stretch">
+                  {/* Replace the current logo with an image 
                   <NavItems />
+                  */}
                 </div>
 
                 <div className="ml-auto flex items-center">

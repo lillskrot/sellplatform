@@ -75,6 +75,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row gap-4 mb-8">
             <div className="flex-none w-full h-80 sm:w-96 sm:h-96 lg:w-96 lg:h-96">
               <ProductReel
+                title="Hello"
                 query={{ sort: "desc", limit: 0 }}
                 href="/products?category=Decals_Stickers"
                 linkText="1:18 Scale Models"
@@ -83,6 +84,7 @@ export default function Home() {
             </div>
             <div className="flex-none w-full h-80 sm:w-96 sm:h-96 lg:w-96 lg:h-96">
               <ProductReel
+                title="Hello"
                 query={{ sort: "desc", limit: 0 }}
                 href="/products?category=CarAccessories"
                 linkText="1:24 Scale Models"

@@ -1,5 +1,5 @@
 export const PRODUCT_CATEGORIES = [
-  /*{
+  {
     label: "1:24 Scale Models",
     value: "Decals_Stickers" as const,
     featured: [
@@ -40,5 +40,5 @@ export const PRODUCT_CATEGORIES = [
         imageSrc: "/nav/decals_stickers/screenholder.png",
       },
     ],
-  },*/
+  },
 ];

@@ -7,6 +7,7 @@ import Link from "next/link";
 import ProductListing from "./ProductListing";
 
 interface ProductReelProps {
+  title: string;
   subtitle?: string;
   href?: string;
   query: TQueryValidator;
@@ -17,7 +18,7 @@ interface ProductReelProps {
 const FALLBACK_LIMIT = 4;
 
 const ProductReel = (props: ProductReelProps) => {
-  const { subtitle, href, query, linkText, imageSrc } = props;
+  const { title, subtitle, href, query, linkText, imageSrc } = props;
 
   const { data: queryResults, isLoading } =
     trpc.getInfiniteProducts.useInfiniteQuery(
@@ -43,7 +44,7 @@ const ProductReel = (props: ProductReelProps) => {
     <div className="relative" style={{ width: "100%", height: "100%" }}>
       {imageSrc ? (
         <div className="relative" style={{ width: "100%", height: "100%" }}>
-          <Link href={href}>
+          <Link href={href ?? ""}>
             <img
               src={imageSrc}
               alt="Custom"
@@ -51,7 +52,7 @@ const ProductReel = (props: ProductReelProps) => {
               className="rounded-lg transition-transform duration-1000 ease-in-out transform hover:scale-105"
             />
           </Link>
-          {linkText ? (
+          {linkText && href ? (
             <Link
               href={href}
               className="absolute bottom-0 left-0 p-2 text-left text-sm font-medium text-blue-600 hover:text-blue-500 bg-white rounded-tr-lg"
