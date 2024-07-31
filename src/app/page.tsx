@@ -77,7 +77,7 @@ export default function Home() {
               <ProductReel
                 title="Hello"
                 query={{ sort: "desc", limit: 0 }}
-                href="/products?category=Decals_Stickers"
+                href="/products?category=1:18"
                 linkText="1:18 Scale Models"
                 imageSrc="/vitModelBil.png"
               />
@@ -86,9 +86,18 @@ export default function Home() {
               <ProductReel
                 title="Hello"
                 query={{ sort: "desc", limit: 0 }}
-                href="/products?category=CarAccessories"
+                href="/products?category=1:24"
                 linkText="1:24 Scale Models"
                 imageSrc="/svartModelBil.png"
+              />
+            </div>
+            <div className="flex-none w-full h-80 sm:w-96 sm:h-96 lg:w-96 lg:h-96">
+              <ProductReel
+                title="Hello"
+                query={{ sort: "desc", limit: 0 }}
+                href="/products?category=LEDStickers"
+                linkText="LED stickers"
+                imageSrc="/ledusbboostloading1.jpg"
               />
             </div>
           </div>
