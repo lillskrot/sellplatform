@@ -1,43 +1,43 @@
 export const PRODUCT_CATEGORIES = [
   {
-    label: "1_18",
-    value: "1_18" as const,
+    label: "1:24 Scale Models",
+    value: "Decals_Stickers" as const,
     featured: [
       {
         name: "GTA Wanted Sign",
-        href: "/products?category=1_18&sort=desc",
-        imageSrc: "/nav/1_18/wanted1-1024x1365.webp",
+        href: "/products?category=Decals_Stickers&sort=desc",
+        imageSrc: "/nav/Decals_Stickers/wanted1-1024x1365.webp",
       },
       {
         name: "Electric Hearts",
-        href: "/products?category=1_18",
-        imageSrc: "/nav/1_18/heart1.png",
+        href: "/products?category=Decals_Stickers",
+        imageSrc: "/nav/Decals_Stickers/heart1.png",
       },
       {
         name: "Boost Loading Sticker",
-        href: "/products?category=1_18",
-        imageSrc: "/nav/1_18/ledusbboostloading1.jpg",
+        href: "/products?category=Decals_Stickers",
+        imageSrc: "/nav/Decals_Stickers/ledusbboostloading1.jpg",
       },
     ],
   },
   {
-    label: "1_24",
-    value: "1_24" as const,
+    label: "1:18 Scale Models",
+    value: "CarAccessories" as const,
     featured: [
       {
         name: "Floor Mats",
-        href: `/products?category=1_24`,
-        imageSrc: "/nav/1_18/GlowMat.png",
+        href: `/products?category=Decals_Stickers`,
+        imageSrc: "/nav/CarAccessories/GlowMat.png",
       },
       {
         name: "Shifter Hoodie",
-        href: "/products?category=1_24",
-        imageSrc: "/nav/1_18/shifter_hoodie.jpg",
+        href: "/products?category=Decals_Stickers",
+        imageSrc: "/nav/CarAccessories/shifter_hoodie.jpg",
       },
       {
         name: "Screen Holder",
-        href: "/products?category=1_24",
-        imageSrc: "/nav/1_18/screenholder.png",
+        href: "/products?category=Decals_Stickers",
+        imageSrc: "/nav/CarAccessories/screenholder.png",
       },
     ],
   },
@@ -48,17 +48,17 @@ export const PRODUCT_CATEGORIES = [
       {
         name: "Floor Mats",
         href: `/products?category=LEDStickers`,
-        imageSrc: "/nav/1_18/GlowMat.png",
+        imageSrc: "/nav/CarAccessories/GlowMat.png",
       },
       {
         name: "Shifter Hoodie",
         href: "/products?category=LEDStickers",
-        imageSrc: "/nav/1_18/shifter_hoodie.jpg",
+        imageSrc: "/nav/CarAccessories/shifter_hoodie.jpg",
       },
       {
         name: "Screen Holder",
         href: "/products?category=LEDStickers",
-        imageSrc: "/nav/1:18/screenholder.png",
+        imageSrc: "/nav/CarAccessories/screenholder.png",
       },
     ],
   },
