@@ -47,8 +47,8 @@ exports.Users = {
     },
     fields: [
         {
-            name: "zipcode",
-            label: "Zipcode",
+            name: "postalcode",
+            label: "postalcode",
             type: "text",
         },
         {

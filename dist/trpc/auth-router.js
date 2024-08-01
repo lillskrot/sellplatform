@@ -48,11 +48,11 @@ exports.authRouter = (0, trpc_1.router)({
         .mutation(function (_a) {
         var input = _a.input;
         return __awaiter(void 0, void 0, void 0, function () {
-            var email, password, zipcode, city, address, payload, users;
+            var email, password, postalcode, city, address, payload, users;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        email = input.email, password = input.password, zipcode = input.zipcode, city = input.city, address = input.address;
+                        email = input.email, password = input.password, postalcode = input.postalcode, city = input.city, address = input.address;
                         return [4 /*yield*/, (0, get_payload_1.getPayloadClient)()];
                     case 1:
                         payload = _b.sent();
@@ -73,7 +73,7 @@ exports.authRouter = (0, trpc_1.router)({
                                 data: {
                                     email: email,
                                     password: password,
-                                    zipcode: zipcode,
+                                    postalcode: postalcode,
                                     city: city,
                                     address: address,
                                     role: "user",
@@ -91,7 +91,7 @@ exports.authRouter = (0, trpc_1.router)({
         .query(function (_a) {
         var input = _a.input;
         return __awaiter(void 0, void 0, void 0, function () {
-            var token, payload, isVerified;
+            var token, payload;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
@@ -99,14 +99,11 @@ exports.authRouter = (0, trpc_1.router)({
                         return [4 /*yield*/, (0, get_payload_1.getPayloadClient)()];
                     case 1:
                         payload = _b.sent();
-                        return [4 /*yield*/, payload.verifyEmail({
-                                collection: "users",
-                                token: token,
-                            })];
-                    case 2:
-                        isVerified = _b.sent();
-                        if (!isVerified)
-                            throw new server_1.TRPCError({ code: "UNAUTHORIZED" });
+                        //const isVerified = await payload.verifyEmail({
+                        //collection: "users",
+                        //token,
+                        //});
+                        //if (!isVerified) throw new TRPCError({ code: "UNAUTHORIZED" });
                         return [2 /*return*/, { success: true }];
                 }
             });
@@ -117,12 +114,12 @@ exports.authRouter = (0, trpc_1.router)({
         .mutation(function (_a) {
         var input = _a.input, ctx = _a.ctx;
         return __awaiter(void 0, void 0, void 0, function () {
-            var email, password, zipcode, city, address, res, payload, err_1;
+            var email, password, postalcode, city, address, res, payload, err_1;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
                         console.log("inside signIn");
-                        email = input.email, password = input.password, zipcode = input.zipcode, city = input.city, address = input.address;
+                        email = input.email, password = input.password, postalcode = input.postalcode, city = input.city, address = input.address;
                         res = ctx.res;
                         return [4 /*yield*/, (0, get_payload_1.getPayloadClient)()];
                     case 1:
@@ -143,7 +140,7 @@ exports.authRouter = (0, trpc_1.router)({
                         return [2 /*return*/, { success: true }];
                     case 4:
                         err_1 = _b.sent();
-                        throw new server_1.TRPCError({ code: "UNAUTHORIZED" });
+                        return [3 /*break*/, 5];
                     case 5: return [2 /*return*/];
                 }
             });

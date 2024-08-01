@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PRODUCT_CATEGORIES = void 0;
 exports.PRODUCT_CATEGORIES = [
     {
-        label: "Decals & Stickers",
+        label: "1:24 Scale Models",
         value: "Decals_Stickers",
         featured: [
             {
@@ -14,54 +14,54 @@ exports.PRODUCT_CATEGORIES = [
             {
                 name: "Electric Hearts",
                 href: "/products?category=Decals_Stickers",
-                imageSrc: "/nav/decals_stickers/heart1.png",
+                imageSrc: "/nav/Decals_Stickers/heart1.png",
             },
             {
                 name: "Boost Loading Sticker",
                 href: "/products?category=Decals_Stickers",
-                imageSrc: "/nav/decals_stickers/ledusbboostloading1.jpg",
+                imageSrc: "/nav/Decals_Stickers/ledusbboostloading1.jpg",
             },
         ],
     },
     {
-        label: "Car Accessories",
+        label: "1:18 Scale Models",
         value: "CarAccessories",
         featured: [
             {
                 name: "Floor Mats",
-                href: "/products?category=CarAccessories",
-                imageSrc: "/nav/decals_stickers/GlowMat.png",
+                href: "/products?category=Decals_Stickers",
+                imageSrc: "/nav/CarAccessories/GlowMat.png",
             },
             {
-                name: "Example2",
-                href: "/products?category=CarAccessories&sort=desc",
-                imageSrc: "/nav/CarAccessories/",
+                name: "Shifter Hoodie",
+                href: "/products?category=Decals_Stickers",
+                imageSrc: "/nav/CarAccessories/shifter_hoodie.jpg",
             },
             {
-                name: "Example2",
-                href: "/products?category=CarAccessories",
-                imageSrc: "/nav/CarAccessories/",
+                name: "Screen Holder",
+                href: "/products?category=Decals_Stickers",
+                imageSrc: "/nav/CarAccessories/screenholder.png",
             },
         ],
     },
     {
-        label: "Gadgets",
-        value: "gadgets",
+        label: "LEDStickers",
+        value: "LEDStickers",
         featured: [
             {
+                name: "Floor Mats",
+                href: "/products?category=LEDStickers",
+                imageSrc: "/nav/CarAccessories/GlowMat.png",
+            },
+            {
                 name: "Shifter Hoodie",
-                href: "/products?category=gadgets&sort=desc",
-                imageSrc: "/nav/decals_stickers/shifter_hoodie.jpg",
+                href: "/products?category=LEDStickers",
+                imageSrc: "/nav/CarAccessories/shifter_hoodie.jpg",
             },
             {
-                name: "Device Holders",
-                href: "/products?category=gadgets",
-                imageSrc: "/nav/decals_stickers/phoneholder.jpg",
-            },
-            {
-                name: "Rearview Mirror Charms",
-                href: "/products?category=gadgets",
-                imageSrc: "/nav/decals_stickers/7198gP0UgxL._AC_UF1000,1000_QL80_.jpg",
+                name: "Screen Holder",
+                href: "/products?category=LEDStickers",
+                imageSrc: "/nav/CarAccessories/screenholder.png",
             },
         ],
     },
