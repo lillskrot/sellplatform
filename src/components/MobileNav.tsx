@@ -6,10 +6,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
+import { User } from "@/payload-types";
 import Cart from "./Cart";
 
-const MobileNav = () => {
+const MobileNav = ({ user }: { user: User | null }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const pathname = usePathname();
@@ -123,7 +123,7 @@ const MobileNav = () => {
                 </Link>
               </div>
               <div className="flow-root">
-                <Cart />
+                <Cart user={user} />
               </div>
             </div>
           </div>

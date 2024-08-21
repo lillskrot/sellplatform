@@ -90,7 +90,7 @@ const Cart = ({ user }: { user: User | null }) => {
                         className: "w-full",
                       })}
                     >
-                      Continue to Checkout
+                      Continue to Cart
                     </Link>
                   )}
                 </SheetTrigger>

@@ -42,7 +42,7 @@ var trpc_1 = require("./trpc");
 var get_payload_1 = require("../get-payload");
 var server_1 = require("@trpc/server");
 var zod_1 = require("zod");
-var sign_in_validator_1 = require("@/lib/validators/sign-in-validator");
+var sign_in_validator_1 = require("../lib/validators/sign-in-validator");
 exports.authRouter = (0, trpc_1.router)({
     createPayloadUser: trpc_1.publicProcedure
         .input(account_credentials_validator_1.AuthCredentialsValidator)
