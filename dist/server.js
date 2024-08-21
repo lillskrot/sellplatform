@@ -127,8 +127,7 @@ var start = function () { return __awaiter(void 0, void 0, void 0, function () {
                 cartRouter.use(payload.authenticate);
                 cartRouter.get("/", function (req, res) {
                     var request = req;
-                    if (!request.user)
-                        return res.redirect("/sign-in?origin=cart");
+                    //if (!request.user) return res.redirect("/sign-in?origin=cart");
                     var parsedUrl = (0, url_1.parse)(req.url, true);
                     var query = parsedUrl.query;
                     return next_utils_1.nextApp.render(req, res, "/cart", query);

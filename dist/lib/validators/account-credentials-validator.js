@@ -8,12 +8,24 @@ exports.AuthCredentialsValidator = zod_1.z.object({
         message: "Password must be at least 8 characters long.",
     }),
     postalcode: zod_1.z.string().min(5, {
-        message: "Should include postalcode",
+        message: "Must include Postalcode",
     }),
     city: zod_1.z.string().min(1, {
-        message: "Should include town/city name",
+        message: "Must include City",
     }),
     address: zod_1.z.string().min(1, {
-        message: "Should include address",
+        message: "Must include Address",
+    }),
+    Country: zod_1.z.string().min(1, {
+        message: "Must include Country",
+    }),
+    Lastname: zod_1.z.string().min(1, {
+        message: "Must include Lastname",
+    }),
+    Firstname: zod_1.z.string().min(1, {
+        message: "Must include Firstname",
+    }),
+    Apartment: zod_1.z.string().min(1, {
+        message: "Must include Apartment",
     }),
 });

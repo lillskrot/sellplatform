@@ -6,13 +6,25 @@ export const AuthCredentialsValidator = z.object({
     message: "Password must be at least 8 characters long.",
   }),
   postalcode: z.string().min(5, {
-    message: "Should include postalcode",
+    message: "Must include Postalcode",
   }),
   city: z.string().min(1, {
-    message: "Should include town/city name",
+    message: "Must include City",
   }),
   address: z.string().min(1, {
-    message: "Should include address",
+    message: "Must include Address",
+  }),
+  Country: z.string().min(1, {
+    message: "Must include Country",
+  }),
+  Lastname: z.string().min(1, {
+    message: "Must include Lastname",
+  }),
+  Firstname: z.string().min(1, {
+    message: "Must include Firstname",
+  }),
+  Apartment: z.string().min(1, {
+    message: "Must include Apartment",
   }),
 });
 

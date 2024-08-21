@@ -29,6 +29,10 @@ export interface User {
   postalcode: string;
   city: string;
   address: string;
+  Country: string;
+  Lastname: string;
+  Firstname: string;
+  Apartment: string;
   resetPasswordToken?: string | null;
   resetPasswordExpiration?: string | null;
   salt?: string | null;
@@ -45,7 +49,7 @@ export interface Product {
   name: string;
   description?: string | null;
   price: number;
-  category: "CarAccessories" | "Decals_Stickers" /*| "LEDStickers"*/;
+  category: "CarAccessories" | "Decals_Stickers" | "LEDStickers";
   product_files: string | ProductFile;
   approvedForSale?: ("pending" | "approved" | "denied") | null;
   priceId?: string | null;

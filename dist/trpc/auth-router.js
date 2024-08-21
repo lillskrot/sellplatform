@@ -42,17 +42,66 @@ var trpc_1 = require("./trpc");
 var get_payload_1 = require("../get-payload");
 var server_1 = require("@trpc/server");
 var zod_1 = require("zod");
+var sign_in_validator_1 = require("@/lib/validators/sign-in-validator");
 exports.authRouter = (0, trpc_1.router)({
     createPayloadUser: trpc_1.publicProcedure
         .input(account_credentials_validator_1.AuthCredentialsValidator)
         .mutation(function (_a) {
         var input = _a.input;
         return __awaiter(void 0, void 0, void 0, function () {
-            var email, password, postalcode, city, address, payload, users;
+            var email, postalcode, city, address, Country, Lastname, Firstname, Apartment, payload, users;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        email = input.email, password = input.password, postalcode = input.postalcode, city = input.city, address = input.address;
+                        email = input.email, postalcode = input.postalcode, city = input.city, address = input.address, Country = input.Country, Lastname = input.Lastname, Firstname = input.Firstname, Apartment = input.Apartment;
+                        return [4 /*yield*/, (0, get_payload_1.getPayloadClient)()];
+                    case 1:
+                        payload = _b.sent();
+                        return [4 /*yield*/, payload.find({
+                                collection: "users",
+                                where: {
+                                    email: {
+                                        equals: email,
+                                    },
+                                },
+                            })];
+                    case 2:
+                        users = (_b.sent()).docs;
+                        if (users.length !== 0)
+                            throw new server_1.TRPCError({ code: "CONFLICT" });
+                        return [4 /*yield*/, payload.create({
+                                collection: "users",
+                                data: {
+                                    email: email,
+                                    password: "",
+                                    postalcode: postalcode,
+                                    city: city,
+                                    address: address,
+                                    Country: Country,
+                                    Lastname: Lastname,
+                                    Firstname: Firstname,
+                                    Apartment: Apartment !== null && Apartment !== void 0 ? Apartment : "",
+                                    role: "user",
+                                },
+                            })];
+                    case 3:
+                        _b.sent();
+                        return [2 /*return*/, { success: true, sentToEmail: email }];
+                }
+            });
+        });
+    }),
+    createAndSignInPayloadUser: trpc_1.publicProcedure
+        .input(account_credentials_validator_1.AuthCredentialsValidator)
+        .mutation(function (_a) {
+        var input = _a.input, ctx = _a.ctx;
+        return __awaiter(void 0, void 0, void 0, function () {
+            var email, password, postalcode, city, address, Country, Lastname, Firstname, Apartment, res, payload, users, err_1;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        email = input.email, password = input.password, postalcode = input.postalcode, city = input.city, address = input.address, Country = input.Country, Lastname = input.Lastname, Firstname = input.Firstname, Apartment = input.Apartment;
+                        res = ctx.res;
                         return [4 /*yield*/, (0, get_payload_1.getPayloadClient)()];
                     case 1:
                         payload = _b.sent();
@@ -76,12 +125,36 @@ exports.authRouter = (0, trpc_1.router)({
                                     postalcode: postalcode,
                                     city: city,
                                     address: address,
+                                    Country: Country,
+                                    Lastname: Lastname,
+                                    Firstname: Firstname,
+                                    Apartment: Apartment,
                                     role: "user",
                                 },
                             })];
                     case 3:
                         _b.sent();
-                        return [2 /*return*/, { success: true, sentToEmail: email }];
+                        _b.label = 4;
+                    case 4:
+                        _b.trys.push([4, 6, , 7]);
+                        return [4 /*yield*/, payload.login({
+                                collection: "users",
+                                data: {
+                                    email: email,
+                                    password: password,
+                                },
+                                res: res,
+                            })];
+                    case 5:
+                        _b.sent();
+                        return [2 /*return*/, { success: true }];
+                    case 6:
+                        err_1 = _b.sent();
+                        throw new server_1.TRPCError({
+                            code: "BAD_REQUEST",
+                            message: JSON.stringify(err_1),
+                        });
+                    case 7: return [2 /*return*/, { success: true, sentToEmail: email }];
                 }
             });
         });
@@ -110,16 +183,15 @@ exports.authRouter = (0, trpc_1.router)({
         });
     }),
     signIn: trpc_1.publicProcedure
-        .input(account_credentials_validator_1.AuthCredentialsValidator)
+        .input(sign_in_validator_1.SignInValidator)
         .mutation(function (_a) {
         var input = _a.input, ctx = _a.ctx;
         return __awaiter(void 0, void 0, void 0, function () {
-            var email, password, postalcode, city, address, res, payload, err_1;
+            var email, password, res, payload, err_2;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        console.log("inside signIn");
-                        email = input.email, password = input.password, postalcode = input.postalcode, city = input.city, address = input.address;
+                        email = input.email, password = input.password;
                         res = ctx.res;
                         return [4 /*yield*/, (0, get_payload_1.getPayloadClient)()];
                     case 1:
@@ -139,7 +211,7 @@ exports.authRouter = (0, trpc_1.router)({
                         _b.sent();
                         return [2 /*return*/, { success: true }];
                     case 4:
-                        err_1 = _b.sent();
+                        err_2 = _b.sent();
                         return [3 /*break*/, 5];
                     case 5: return [2 /*return*/];
                 }

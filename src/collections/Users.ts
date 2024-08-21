@@ -1,4 +1,4 @@
-import { PrimaryActionEmailHtml } from "../components/emails/PrimaryActionEmail";
+// import { PrimaryActionEmailHtml } from "../components/emails/PrimaryActionEmail";
 import { Access, CollectionConfig } from "payload/types";
 
 const adminsAndUser: Access = ({ req: { user } }) => {
@@ -14,7 +14,7 @@ const adminsAndUser: Access = ({ req: { user } }) => {
 export const Users: CollectionConfig = {
   slug: "users",
   auth: {
-    verify: {
+    verify: false /*{
       generateEmailHTML: ({ token }) => {
         return PrimaryActionEmailHtml({
           actionLabel: "verify your account",
@@ -23,6 +23,7 @@ export const Users: CollectionConfig = {
         });
       },
     },
+    */,
   },
   access: {
     read: adminsAndUser,
@@ -48,6 +49,26 @@ export const Users: CollectionConfig = {
     {
       name: "address",
       label: "Address",
+      type: "text",
+    },
+    {
+      name: "Country",
+      label: "Country",
+      type: "text",
+    },
+    {
+      name: "Lastname",
+      label: "Lastname",
+      type: "text",
+    },
+    {
+      name: "Firstname",
+      label: "Firstname",
+      type: "text",
+    },
+    {
+      name: "Apartment",
+      label: "Apartment",
       type: "text",
     },
     {

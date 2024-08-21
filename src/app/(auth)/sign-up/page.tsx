@@ -1,12 +1,10 @@
 "use client";
 
-import { Icons } from "@/components/Icons";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
@@ -17,7 +15,7 @@ import {
 import { trpc } from "@/trpc/client";
 import { toast } from "sonner";
 import { ZodError } from "zod";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 
 const Page = () => {
@@ -29,29 +27,41 @@ const Page = () => {
     resolver: zodResolver(AuthCredentialsValidator),
   });
 
+  const searchParams = useSearchParams();
+
   const router = useRouter();
+  const isSeller = searchParams.get("as") === "seller";
 
-  const { mutate, isLoading } = trpc.auth.createPayloadUser.useMutation({
-    onError: (err) => {
-      if (err.data?.code === "CONFLICT") {
-        toast.error("This email is already in use. Sign in instead?");
+  /**
+   * Create user
+   * - Creates the new user.
+   * - On Success, Let's try and sign in the user right away.
+   * - TODO: We need to remove any code that requires email validation.
+   */
 
-        return;
-      }
+  const { mutate, isLoading } =
+    trpc.auth.createAndSignInPayloadUser.useMutation({
+      onError: (err) => {
+        if (err.data?.code === "CONFLICT") {
+          toast.error("This email is already in use. Sign in instead?");
 
-      if (err instanceof ZodError) {
-        toast.error(err.issues[0].message);
+          return;
+        }
 
-        return;
-      }
+        if (err instanceof ZodError) {
+          toast.error(err.issues[0].message);
 
-      toast.error("Something went wrong. Please try again.");
-    },
-    onSuccess: ({ sentToEmail }) => {
-      toast.success(`Verification email sent to ${sentToEmail}.`);
-      router.push("/verify-email?to=" + sentToEmail);
-    },
-  });
+          return;
+        }
+
+        toast.error("Something went wrong. Please try again.");
+      },
+      onSuccess: () => {
+        toast.success(`Created and signed in user.`);
+        router.push("/verify-email");
+        window.location.href = "/verify-email";
+      },
+    });
 
   const onSubmit = ({
     email,
@@ -59,15 +69,40 @@ const Page = () => {
     postalcode,
     city,
     address,
+    Country,
+    Lastname,
+    Firstname,
+    Apartment,
   }: TAuthCredentialsValidator) => {
-    console.log("ON SUBMIT", email, password, postalcode, city, address);
-    mutate({ email, password, postalcode, city, address });
+    console.log(
+      "ON SUBMIT",
+      email,
+      password,
+      postalcode,
+      city,
+      address,
+      Country,
+      Lastname,
+      Firstname,
+      Apartment
+    );
+    mutate({
+      email,
+      password,
+      postalcode,
+      city,
+      address,
+      Country,
+      Lastname,
+      Firstname,
+      Apartment,
+    });
   };
 
   return (
     <>
-      <div className="container relative flex pt-20 flex-col items-center justify-center lg:px-0">
-        <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
+      <div className="container relative flex flex-col items-center justify-center lg:px-0">
+        <div className="bg-white mx-auto flex w-full flex-col justify-start space-y-6 sm:w-[535px] sm:h-[1067px] px-12 py-32 pt-32 shadow-lg">
           <div className="flex flex-col items-center space-y-2 text-center">
             <div className="ml-4 flex lg:ml-0">
               <Link href="/">
@@ -81,11 +116,8 @@ const Page = () => {
                 />
               </Link>
             </div>
-            <h1 className="text-2xl font-semibold tracking-tight">
-              Create an account
-            </h1>
 
-            <Link
+            {/*<Link
               className={buttonVariants({
                 variant: "link",
                 className: "gap-1.5",
@@ -94,20 +126,23 @@ const Page = () => {
             >
               Already have an account? Sign-in
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </Link>*/}
           </div>
 
           <div className="grid gap-6">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid gap-2">
+                <h1 className="text-2xl font-semibold tracking-tight">
+                  Contact
+                </h1>
                 <div className="grid gap-1 py-2">
-                  <Label htmlFor="email">Email</Label>
+                  {/*<Label htmlFor="email">Email</Label>*/}
                   <Input
                     {...register("email")}
                     className={cn({
                       "focus-visible:ring-red-500": errors.email,
                     })}
-                    placeholder="you@example.com"
+                    placeholder="Email"
                   />
                   {errors?.email && (
                     <p className="text-sm text-red-500">
@@ -117,13 +152,13 @@ const Page = () => {
                 </div>
 
                 <div className="grid gap-1 py-2">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">Password (To sign in later)</Label>
                   <Input
                     {...register("password")}
-                    type="password"
                     className={cn({
                       "focus-visible:ring-red-500": errors.password,
                     })}
+                    type="password"
                     placeholder="Password"
                   />
                   {errors?.password && (
@@ -134,7 +169,59 @@ const Page = () => {
                 </div>
 
                 <div className="grid gap-1 py-2">
-                  <Label htmlFor="address">Address</Label>
+                  {/*<Label htmlFor="Country">Country/Region</Label>*/}
+                  <h1 className="text-2xl font-semibold tracking-tight">
+                    Delivery
+                  </h1>
+                  <Input
+                    {...register("Country")}
+                    type="Country"
+                    className={cn({
+                      "focus-visible:ring-red-500": errors.Country,
+                    })}
+                    placeholder="Country/Region"
+                  />
+                  {errors?.Country && (
+                    <p className="text-sm text-red-500">
+                      {errors.Country.message}
+                    </p>
+                  )}
+                </div>
+
+                <div className="py-2">
+                  {/*<Label htmlFor="postalcode">First and last name</Label>*/}
+                  <div className="flex">
+                    <Input
+                      {...register("Firstname")}
+                      type="Firstname"
+                      className={cn("w-1/2 mr-2", {
+                        "focus-visible:ring-red-500": errors.Firstname,
+                      })}
+                      placeholder="First name (optional)"
+                    />
+                    <Input
+                      {...register("Lastname")}
+                      type="Lastname"
+                      className={cn("w-1/2", {
+                        "focus-visible:ring-red-500": errors.Lastname,
+                      })}
+                      placeholder="Last name"
+                    />
+                  </div>
+                  {errors?.Firstname && (
+                    <p className="text-sm text-red-500">
+                      {errors.Firstname.message}
+                    </p>
+                  )}
+                  {errors?.Lastname && (
+                    <p className="text-sm text-red-500">
+                      {errors.Lastname.message}
+                    </p>
+                  )}
+                </div>
+
+                <div className="grid gap-1 py-2">
+                  {/*<Label htmlFor="address">Address</Label>*/}
                   <Input
                     {...register("address")}
                     type="address"
@@ -150,8 +237,25 @@ const Page = () => {
                   )}
                 </div>
 
+                <div className="grid gap-1 py-2">
+                  {/*<Label htmlFor="Apartment">Apartment</Label>*/}
+                  <Input
+                    {...register("Apartment")}
+                    type="Apartment"
+                    className={cn({
+                      "focus-visible:ring-red-500": errors.Apartment,
+                    })}
+                    placeholder="Apartment, suite, etc. (optional)"
+                  />
+                  {errors?.Apartment && (
+                    <p className="text-sm text-red-500">
+                      {errors.Apartment.message}
+                    </p>
+                  )}
+                </div>
+
                 <div className="py-2">
-                  <Label htmlFor="postalcode">postalcode and town/city</Label>
+                  {/*<Label htmlFor="postalcode">Postalcode and city</Label>*/}
                   <div className="flex">
                     <Input
                       {...register("postalcode")}
@@ -159,7 +263,7 @@ const Page = () => {
                       className={cn("w-1/2 mr-2", {
                         "focus-visible:ring-red-500": errors.postalcode,
                       })}
-                      placeholder="postalcode"
+                      placeholder="Postalcode"
                     />
                     <Input
                       {...register("city")}
@@ -167,7 +271,7 @@ const Page = () => {
                       className={cn("w-1/2", {
                         "focus-visible:ring-red-500": errors.city,
                       })}
-                      placeholder="Town/City"
+                      placeholder="City"
                     />
                   </div>
                   {errors?.postalcode && (
@@ -182,7 +286,7 @@ const Page = () => {
                   )}
                 </div>
 
-                <Button>Sign up</Button>
+                <Button>Sign up and proceed</Button>
               </div>
             </form>
           </div>

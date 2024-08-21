@@ -1,4 +1,7 @@
+import { GoToStripeButton } from "@/components/GoToStripeButton";
 import VerifyEmail from "@/components/VerifyEmail";
+import { getServerSideUser } from "@/lib/payload-utils";
+import { cookies } from "next/headers";
 import Image from "next/image";
 
 interface PageProps {
@@ -7,9 +10,13 @@ interface PageProps {
   };
 }
 
-const VerifyEmailPage = ({ searchParams }: PageProps) => {
+const VerifyEmailPage = async ({ searchParams }: PageProps) => {
   const token = searchParams.token;
   const toEmail = searchParams.to;
+  console.log(toEmail);
+
+  const nextCookies = cookies();
+  const { user } = await getServerSideUser(nextCookies);
 
   return (
     <div className="container relative flex pt-20 flex-col items-center justify-center lg:px-0">
@@ -25,19 +32,16 @@ const VerifyEmailPage = ({ searchParams }: PageProps) => {
             </div>
 
             <h3 className="font-semibold text-2xl">Thanks for signing up!</h3>
-
-            {toEmail ? (
-              <p className="text-muted-foreground text-center">
-                You should now be able to order:
-                <span className="font-semibold">{toEmail}</span>.
-              </p>
-            ) : (
-              <p className="text-muted-foreground text-center">
-                You should now be able to order.
-              </p>
-            )}
+            <p>
+              You can sign in using your e-mail and password later to check on
+              your order.
+            </p>
           </div>
         )}
+
+        <p>
+          <GoToStripeButton user={user} />
+        </p>
       </div>
     </div>
   );

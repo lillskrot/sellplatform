@@ -13,9 +13,9 @@ import React, { useState } from "react";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 
 import {
-  AuthCredentialsValidator,
-  TAuthCredentialsValidator,
-} from "@/lib/validators/account-credentials-validator";
+  SignInValidator,
+  TSignInValidator,
+} from "@/lib/validators/sign-in-validator";
 import { trpc } from "@/trpc/client";
 import { toast } from "sonner";
 import { ZodError } from "zod";
@@ -46,8 +46,8 @@ const Page = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<TAuthCredentialsValidator>({
-    resolver: zodResolver(AuthCredentialsValidator),
+  } = useForm<TSignInValidator>({
+    resolver: zodResolver(SignInValidator),
   });
 
   const { mutate: signIn, isLoading } = trpc.auth.signIn.useMutation({
@@ -75,20 +75,17 @@ const Page = () => {
     },
   });
 
-  const onSubmit = ({
-    email,
-    password,
-    postalcode,
-    city,
-    address,
-  }: TAuthCredentialsValidator) => {
-    signIn({ email, password, postalcode, city, address });
+  const onSubmit = ({ email, password }: TSignInValidator) => {
+    signIn({
+      email,
+      password,
+    });
   };
 
   return (
     <>
-      <div className="container relative flex pt-20 flex-col items-center justify-center lg:px-0">
-        <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
+      <div className="container relative flex flex-col items-center justify-center lg:px-0">
+        <div className="bg-white mx-auto flex w-full flex-col justify-start space-y-6 sm:w-[535px] sm:h-[1067px] px-12 py-32 pt-48 shadow-lg">
           <div className="flex flex-col items-center space-y-2 text-center">
             <div className="ml-4 flex lg:ml-0">
               <Link href="/">
@@ -102,11 +99,11 @@ const Page = () => {
                 />
               </Link>
             </div>
-            <h1 className="text-2xl font-semibold tracking-tight">
+            {/*<h1 className="text-2xl font-semibold tracking-tight">
               1. Add an {isSeller ? "seller" : ""} address
-            </h1>
+            </h1>*/}
 
-            <Link
+            {/*<Link
               className={buttonVariants({
                 variant: "link",
                 className: "gap-1.5",
@@ -115,32 +112,23 @@ const Page = () => {
             >
               Don&apos;t have an account?
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </Link>*/}
           </div>
 
           <div className="grid gap-6">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid gap-2">
+                <h1 className="text-2xl font-semibold tracking-tight">
+                  Sign in
+                </h1>
                 <div className="grid gap-1 py-2">
-                  <Label
-                    htmlFor="email"
-                    style={{
-                      backgroundColor: "rgba(255, 255, 255, 0.6)",
-                      backdropFilter: "blur(5px)",
-                      padding: "4px 8px", // Increase padding for a bit taller background
-                      display: "inline-block",
-                      borderRadius: "5px", // Round corners
-                      width: "fit-content", // Set width to fit the content
-                    }}
-                  >
-                    Phone number
-                  </Label>
+                  {/*<Label htmlFor="email">Email</Label>*/}
                   <Input
                     {...register("email")}
                     className={cn({
                       "focus-visible:ring-red-500": errors.email,
                     })}
-                    placeholder="Enter a mobile number for SMS notifications"
+                    placeholder="Email"
                   />
                   {errors?.email && (
                     <p className="text-sm text-red-500">
@@ -150,116 +138,18 @@ const Page = () => {
                 </div>
 
                 <div className="grid gap-1 py-2">
-                  <Label
-                    htmlFor="password"
-                    style={{
-                      backgroundColor: "rgba(255, 255, 255, 0.6)",
-                      backdropFilter: "blur(5px)",
-                      padding: "2px 4px", // Increase padding for a bit taller background
-                      display: "inline-block",
-                      borderRadius: "5px", // Round corners
-                      width: "fit-content", // Set width to fit the content
-                    }}
-                  >
-                    Password
-                  </Label>
-                  <div className="relative">
-                    <Input
-                      {...register("password")}
-                      type={showPassword ? "text" : "password"} // Conditionally set the type based on visibility state
-                      className={cn({
-                        "focus-visible:ring-red-500": errors.password,
-                      })}
-                      placeholder="Password"
-                    />
-                    <button
-                      type="button"
-                      onClick={togglePasswordVisibility} // Click event to toggle password visibility
-                      className="absolute inset-y-0 right-0 pr-3 flex items-center"
-                    >
-                      {showPassword ? (
-                        <EyeOffIcon className="h-5 w-5 text-gray-400" /> // Icon for hiding password
-                      ) : (
-                        <EyeIcon className="h-5 w-5 text-gray-400" /> // Icon for showing password
-                      )}
-                    </button>
-                  </div>
+                  <Label htmlFor="password">Password</Label>
+                  <Input
+                    {...register("password")}
+                    type="password"
+                    className={cn({
+                      "focus-visible:ring-red-500": errors.password,
+                    })}
+                    placeholder="Password"
+                  />
                   {errors?.password && (
                     <p className="text-sm text-red-500">
                       {errors.password.message}
-                    </p>
-                  )}
-                </div>
-
-                <div className="grid gap-1 py-2">
-                  <Label
-                    htmlFor="address"
-                    style={{
-                      backgroundColor: "rgba(255, 255, 255, 0.6)",
-                      backdropFilter: "blur(5px)",
-                      padding: "2px 4px", // Increase padding for a bit taller background
-                      display: "inline-block",
-                      borderRadius: "5px", // Round corners
-                      width: "fit-content", // Set width to fit the content
-                    }}
-                  >
-                    Street address
-                  </Label>
-                  <Input
-                    {...register("address")}
-                    type="address"
-                    className={cn({
-                      "focus-visible:ring-red-500": errors.address,
-                    })}
-                    placeholder="Street and number"
-                  />
-                  {errors?.address && (
-                    <p className="text-sm text-red-500">
-                      {errors.address.message}
-                    </p>
-                  )}
-                </div>
-
-                <div className="py-2">
-                  <Label
-                    htmlFor="postalcode"
-                    style={{
-                      backgroundColor: "rgba(255, 255, 255, 0.6)",
-                      backdropFilter: "blur(2px)",
-                      padding: "2px 4px", // Increase padding for a bit taller background
-                      display: "inline-block",
-                      borderRadius: "5px", // Round corners
-                      width: "fit-content", // Set width to fit the content
-                    }}
-                  >
-                    Postcode
-                  </Label>
-                  <div className="flex">
-                    <Input
-                      {...register("postalcode")}
-                      type="postalcode"
-                      className={cn("w-1/2 mr-2", {
-                        "focus-visible:ring-red-500": errors.postalcode,
-                      })}
-                      placeholder="Enter a 5-digit postcode"
-                    />
-                    <Input
-                      {...register("city")}
-                      type="text"
-                      className={cn("w-1/2", {
-                        "focus-visible:ring-red-500": errors.city,
-                      })}
-                      placeholder="e.g. New York"
-                    />
-                  </div>
-                  {errors?.postalcode && (
-                    <p className="text-sm text-red-500">
-                      {errors.postalcode.message}
-                    </p>
-                  )}
-                  {errors?.city && (
-                    <p className="text-sm text-red-500">
-                      {errors.city.message}
                     </p>
                   )}
                 </div>
@@ -272,23 +162,6 @@ const Page = () => {
                 </Button>
               </div>
             </form>
-
-            <div className="relative">
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 flex items-center"
-              />
-            </div>
-
-            {isSeller ? (
-              <Button
-                onClick={continueAsBuyer}
-                variant="secondary"
-                disabled={isLoading}
-              >
-                Continue as customer
-              </Button>
-            ) : null}
           </div>
         </div>
       </div>

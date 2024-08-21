@@ -18,8 +18,9 @@ import { useCart } from "@/hooks/use-cart";
 import { ScrollArea } from "./ui/scroll-area";
 import CartItem from "./CartItem";
 import { useEffect, useState } from "react";
+import { User } from "@/payload-types";
 
-const Cart = () => {
+const Cart = ({ user }: { user: User | null }) => {
   const { items } = useCart();
   const itemCount = items.length;
 
@@ -73,14 +74,25 @@ const Cart = () => {
 
               <SheetFooter>
                 <SheetTrigger asChild>
-                  <Link
-                    href="/cart"
-                    className={buttonVariants({
-                      className: "w-full",
-                    })}
-                  >
-                    Continue to Checkout
-                  </Link>
+                  {user ? (
+                    <Link
+                      href="/cart"
+                      className={buttonVariants({
+                        className: "w-full",
+                      })}
+                    >
+                      Continue to Payment (signed in)
+                    </Link>
+                  ) : (
+                    <Link
+                      href="/cart"
+                      className={buttonVariants({
+                        className: "w-full",
+                      })}
+                    >
+                      Continue to Checkout
+                    </Link>
+                  )}
                 </SheetTrigger>
               </SheetFooter>
             </div>
