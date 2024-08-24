@@ -183,7 +183,7 @@ export const PageCart = ({ user }: { user: User | null }) => {
                 // or
                 // window.location.href = '/signup'; // Redirects to the signup page in plain React
               }}
-              className="w-full"
+              className={`w-full font-normal bg-gray-200 text-gray-800 hover:text-black hover:bg-gray-200 hover:scale-101 tracking-wider`}
               size="lg"
             >
               {isLoading ? (

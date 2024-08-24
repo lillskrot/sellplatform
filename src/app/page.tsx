@@ -1,24 +1,38 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import ProductReel from "@/components/ProductReel";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
+import { Star, Gift, Car } from "lucide-react";
 import Link from "next/link";
 
 const perks = [
   {
-    name: "Fast delivery",
-    Icon: ArrowDownToLine,
-    description: "Fast delivery, takes about 2-5 business days to arrive.",
+    name: "Why choose us?",
+    Icon: Star,
+    description: `
+      - 100+ Happy Customers 👍
+      - Crafted with Precision ✔️
+      - High quality materials ⚙️
+    `,
   },
+
   {
-    name: "For the Planet",
-    Icon: Leaf,
-    description: "We've pledged 10% of sales to charities of your choice!",
+    name: "The Perfect Gift",
+    Icon: Gift,
+    description: `
+      Our Models and Posters are the perfect gift for any car enthusiast 
+      of any age or gender. Lighten up their month with their very own 
+      model of their favourite supercar. 🚗
+    `,
   },
+
   {
-    name: "Quality",
-    Icon: CheckCircle,
-    description: "We ensure good quality on our items",
+    name: "Product Features",
+    Icon: Car,
+    description: `
+      Each of our products includes a variety of exciting features and 
+      details that separate us from our competitors. All models (including 
+      Framed ones) include moving parts, functional wheels, lights and more!🌟
+    `,
   },
 ];
 
@@ -29,13 +43,8 @@ export default function Home() {
         <MaxWidthWrapper>
           <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl font-heading">
-              Your marketplace for high-quality{" "}
-              <span
-                className="text-blue-800"
-                style={{ color: "rgb(89, 122, 157)" }}
-              >
-                Car models
-              </span>
+              The #1 store for car{" "}
+              <span className="text-gray-800">enthusiasts</span>
             </h1>
             <div style={{ position: "relative" }}>
               <div
@@ -53,8 +62,15 @@ export default function Home() {
                 }}
               ></div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 mt-6 font-body-bold">
-              <Link href="/products" className={buttonVariants()}>
+            <div className="flex flex-col sm:flex-row gap-4 mt-6">
+              <Link
+                href="/products"
+                className={`${buttonVariants()} text-lg font-normal bg-white text-gray-800 hover:text-black hover:scale-101 tracking-wider`}
+                style={{
+                  padding: "24px 24px",
+                  transition: "transform 0.05s",
+                }}
+              >
                 Shop Now
               </Link>
             </div>
@@ -63,41 +79,94 @@ export default function Home() {
       </div>
 
       <section
-        className="border-t border-gray-200 bg-white"
-        style={{ marginTop: "13%" }}
+        className="border-t border-gray-200 bg-[rgba(244,244,244,255)]"
+        style={
+          {
+            /*marginTop: "13%"*/
+          }
+        }
       >
         <MaxWidthWrapper className="py-">
           <div className="mb-4 text-left">
-            <h2 className="text-2xl font-normal text-gray-800 mb-6 mt-6">
-              Our Collections:
-            </h2>
+            <div className="relative max-w-4xl mx-auto px-4">
+              <h2
+                className="text-3xl font-semibold font-sans text-gray-800 mb-6 tracking-wider"
+                style={{
+                  textShadow: "1px 1px 2px rgba(0, 0, 0, 0.1)",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  marginTop: "50px",
+                }}
+              >
+                Trending Collections
+              </h2>
+              <p
+                className="text-base text-gray-500 tracking-wider"
+                style={{ marginLeft: "auto", marginRight: "auto" }}
+              >
+                Discover Our Bestselling Products and Collections. Join the club
+                of those who
+              </p>
+              <p
+                className="text-base text-gray-500 tracking-wider"
+                style={{ marginLeft: "auto", marginRight: "auto" }}
+              >
+                appreciate style and performance.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                <Link
+                  href="/categoriesPage"
+                  className={`${buttonVariants()} text-lg font-normal bg-white text-gray-800 hover:text-black hover:scale-101 tracking-wider`}
+                  style={{
+                    padding: "24px 24px",
+                    transition: "transform 0.05s",
+                  }}
+                >
+                  View All
+                </Link>
+              </div>
+            </div>
           </div>
-          <div className="flex flex-col lg:flex-row gap-4 mb-8">
-            <div className="flex-none w-full h-80 sm:w-96 sm:h-96 lg:w-96 lg:h-96">
+
+          <div
+            className="flex flex-col lg:flex-row gap-4 mb-8"
+            style={{ marginTop: "40px" }}
+          >
+            <div className="flex-none w-full h-80 sm:w-24 sm:h-96 lg:w-48 lg:h-48 flex justify-center items-center">
               <ProductReel
                 title="Hello"
                 query={{ sort: "desc", limit: 0 }}
                 href="/products?category=CarAccessories"
-                linkText="1:18 Scale Models"
-                imageSrc="/vitModelBil.png"
+                linkText=" 1:18  Scale  Models     ‎ ‎ "
+                imageSrc="/1_18Model.png"
               />
             </div>
-            <div className="flex-none w-full h-80 sm:w-96 sm:h-96 lg:w-96 lg:h-96">
+            <div className="flex-none w-full h-80 sm:w-96 sm:h-96 lg:w-48 lg:h-48 flex justify-center items-center">
               <ProductReel
                 title="Hello"
                 query={{ sort: "desc", limit: 0 }}
                 href="/products?category=Decals_Stickers"
-                linkText="1:24 Scale Models"
-                imageSrc="/svartModelBil.png"
+                linkText="1:24 Scale Models   ‎ "
+                imageSrc="/1_24Model.png"
               />
             </div>
-            <div className="flex-none w-full h-80 sm:w-96 sm:h-96 lg:w-96 lg:h-96">
+            <div className="flex-none w-full h-80 sm:w-96 sm:h-96 lg:w-48 lg:h-48 flex justify-center items-center">
               <ProductReel
                 title="Hello"
                 query={{ sort: "desc", limit: 0 }}
-                href="/products?category=LEDStickers"
-                linkText="LED stickers"
-                imageSrc="/ledusbboostloading1.jpg"
+                href="/products?category=Framed_3D_models"
+                linkText="Framed 3D Models"
+                imageSrc="/FramedCarModels.png"
+              />
+            </div>
+            <div className="flex-none w-full h-80 sm:w-96 sm:h-96 lg:w-48 lg:h-48 flex justify-center items-center">
+              <ProductReel
+                title="Hello"
+                query={{ sort: "desc", limit: 0 }}
+                href="/products?category=Accessories_and_Posters"
+                linkText="Accessories & Posters"
+                imageSrc="/posters.png"
               />
             </div>
           </div>
@@ -107,6 +176,7 @@ export default function Home() {
               <div
                 key={perk.name}
                 className="text-center md:flex md:items-start md:text-left lg:block lg:text-center shadow-md"
+                style={{ marginTop: "200px" }}
               >
                 <div className="md:flex-shrink-0 flex justify-center">
                   <div

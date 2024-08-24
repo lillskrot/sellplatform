@@ -53,22 +53,21 @@ const ProductListing = ({ product, index }: ProductListingProps) => {
             </span>
           </h3>
 
-          <p className="h3-background w-2/3 mt-2 text-sm text-gray-900">
-            {label}
-          </p>
+          <p className="h3-background w-2/3 text-sm text-gray-900">{label}</p>
 
-          {/* Display original price with line-through */}
-          <p className="h3-background w-1/4 mt-2 font-medium text-sm text-gray-900">
-            <span>{formatPrice(product.price)}</span>
-          </p>
+          <div className="price-container flex items-center">
+            {/* Display original price */}
+            <p className="original-price font-normal text-base text-gray-900">
+              <span>{formatPrice(product.price)}</span>
+            </p>
 
-          {/* Calculate and display 30% more price */}
-          <p className="h3-background w-3/4 mt-2 font-medium text-sm text-gray-700">
-            <span style={{ textDecoration: "line-through" }}>
-              {formatPrice(product.price * 1.3)}
-            </span>{" "}
-            30% discount🎉
-          </p>
+            {/* Calculate and display 30% more price */}
+            <p className="discount-price font-normal text-base text-gray-900 ml-2">
+              <span style={{ textDecoration: "line-through" }}>
+                {formatPrice(product.price * 1.3)}
+              </span>{" "}
+            </p>
+          </div>
         </div>
       </Link>
     );

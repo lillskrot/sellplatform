@@ -10,8 +10,8 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 207.4 75.7% 21%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 255 100% 100%;
+    /*--primary-foreground: 210 40% 98%;*/
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
@@ -94,7 +94,7 @@ h1 {
 p,
 .font-body {
   color: rgba(0, 0, 0, 1);
-  font-family: var(--font-body-family);
+  /*font-family: var(--font-body-family);*/
 }
 
 /* Apply slightly bolder font weight to the 'font-body-bold' class */
@@ -125,4 +125,38 @@ p,
   background-color: rgba(255, 255, 255, 0.5); /* Transparent white */
   border-radius: 0.5rem; /* Adjust border radius as needed */
   z-index: -1;
+}
+
+.hover\:scale-101:hover {
+  transform: scale(1.01); /* Grows the button slightly on hover */
+}
+
+.hover\:scale-103:hover {
+  transform: scale(1.03); /* Grows the button slightly on hover */
+}
+
+.sheet-content {
+  background-color: rgba(244, 244, 244, 1);
+}
+
+.star-rating {
+  position: relative;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.rating {
+  position: absolute;
+  top: 0;
+}
+
+section::after {
+  content: "";
+  display: block;
+  height: 30px;
+  width: 100%;
+  background: inherit; /* This will extend the existing background color */
 }

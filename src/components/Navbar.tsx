@@ -7,6 +7,7 @@ import { cookies } from "next/headers";
 import UserAccountNav from "./UserAccountNav";
 import MobileNav from "./MobileNav";
 import Image from "next/image";
+import NavItems from "./NavItems";
 
 const Navbar = async () => {
   const nextCookies = cookies();
@@ -31,7 +32,7 @@ const Navbar = async () => {
             fontFamily: "'Merriweather Sans', sans-serif",
           }}
         >
-          <span style={{ fontSize: "1.1rem" }}>30</span>% OFF ALL PRODUCTS!🎉
+          <span style={{ fontSize: "1.1rem" }}>50</span>% OFF ALL ITEMS! 🔥
         </span>
       </div>
       <div className="bg-white sticky z-50 top-0 inset-x-0 h-20">
@@ -55,9 +56,7 @@ const Navbar = async () => {
                 </div>
 
                 <div className="hidden z-50 lg:ml-8 lg:block lg:self-stretch">
-                  {/* Replace the current logo with an image 
-                  <NavItems />
-                  */}
+                  {/*<NavItems />*/}
                 </div>
 
                 <div className="ml-auto flex items-center">

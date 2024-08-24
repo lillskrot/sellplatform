@@ -46,7 +46,7 @@ const Cart = ({ user }: { user: User | null }) => {
           {isMounted ? itemCount : 0}
         </span>
       </SheetTrigger>
-      <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg">
+      <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg sheet-content">
         <SheetHeader className="space-y-2.5 pr-6">
           <SheetTitle>Cart ({itemCount})</SheetTitle>
         </SheetHeader>
@@ -87,7 +87,8 @@ const Cart = ({ user }: { user: User | null }) => {
                     <Link
                       href="/cart"
                       className={buttonVariants({
-                        className: "w-full",
+                        className:
+                          "w-full text-lg font-normal bg-slate-200 text-gray-800 hover:bg-slate-300 hover:scale-101 tracking-wider pt-6  pb-6", // Added padding
                       })}
                     >
                       Continue to Cart

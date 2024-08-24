@@ -45,23 +45,44 @@ exports.PRODUCT_CATEGORIES = [
         ],
     },
     {
-        label: "LEDStickers",
-        value: "LEDStickers",
+        label: "Framed_3D_models",
+        value: "Framed_3D_models",
         featured: [
             {
                 name: "Floor Mats",
-                href: "/products?category=LEDStickers",
+                href: "/products?category=Framed_3D_models",
                 imageSrc: "/nav/CarAccessories/GlowMat.png",
             },
             {
                 name: "Shifter Hoodie",
-                href: "/products?category=LEDStickers",
+                href: "/products?category=Framed_3D_models",
                 imageSrc: "/nav/CarAccessories/shifter_hoodie.jpg",
             },
             {
                 name: "Screen Holder",
-                href: "/products?category=LEDStickers",
+                href: "/products?category=Framed_3D_models",
                 imageSrc: "/nav/CarAccessories/screenholder.png",
+            },
+        ],
+    },
+    {
+        label: "Accessories_and_Posters",
+        value: "Accessories_and_Posters",
+        featured: [
+            {
+                name: "Floor Mats",
+                href: "/products?category=Accessories_and_Posters",
+                imageSrc: "/nav/Accessories_and_Posters/GlowMat.png",
+            },
+            {
+                name: "Shifter Hoodie",
+                href: "/products?category=Framed_3D_models",
+                imageSrc: "/nav/Accessories_and_Posters/shifter_hoodie.jpg",
+            },
+            {
+                name: "Screen Holder",
+                href: "/products?category=Framed_3D_models",
+                imageSrc: "/nav/Accessories_and_Posters/screenholder.png",
             },
         ],
     },

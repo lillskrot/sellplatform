@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 
 type Param = string | string[] | undefined;
@@ -19,20 +19,16 @@ interface ProductsPageProps {
   searchParams: { [key: string]: Param };
 }
 
-const parse = (param: Param) => {
-  return typeof param === "string" ? param : undefined;
-};
-
 const ProductsPage = ({ searchParams }: ProductsPageProps) => {
-  const sort = parse(searchParams.sort);
-  const category = parse(searchParams.category);
-
-  const label = PRODUCT_CATEGORIES.find(
-    ({ value }) => value === category
-  )?.label;
-
   return (
-    <section className="min-w-screen min-h-full border-t border-gray-200 bg-[rgba(244,244,244,255)]">
+    <section className="min-w-screen min-h-[60rem] border-t border-gray-200 bg-[rgba(244,244,244,255)] relative">
+      {/* Added text "hello" in the middle of the screen */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4">
+        <p className="text-4xl font-semibold">
+          Nothing is out of stock at the moment!
+        </p>
+      </div>
+
       <MaxWidthWrapper>
         <div className="w-full mt-12 flex items-center space-x-4">
           <p className="text-base text-gray-600">Filter:</p>
@@ -65,14 +61,6 @@ const ProductsPage = ({ searchParams }: ProductsPageProps) => {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        <ProductReel
-          title={label ?? "Browse high-quality products"}
-          query={{
-            category,
-            limit: 40,
-            sort: sort === "desc" || sort === "asc" ? sort : undefined,
-          }}
-        />
       </MaxWidthWrapper>
     </section>
   );

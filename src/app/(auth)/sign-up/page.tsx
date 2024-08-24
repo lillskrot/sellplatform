@@ -286,7 +286,11 @@ const Page = () => {
                   )}
                 </div>
 
-                <Button>Sign up and proceed</Button>
+                <Button
+                  className={`w-full font-normal bg-gray-200 text-gray-800 hover:text-black hover:bg-gray-200 hover:scale-101 tracking-wider`}
+                >
+                  Sign up and proceed
+                </Button>
               </div>
             </form>
           </div>

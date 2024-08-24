@@ -122,7 +122,7 @@ const Page = () => {
                   Sign in
                 </h1>
                 <div className="grid gap-1 py-2">
-                  {/*<Label htmlFor="email">Email</Label>*/}
+                  <Label htmlFor="email">Email</Label>
                   <Input
                     {...register("email")}
                     className={cn({
@@ -154,7 +154,10 @@ const Page = () => {
                   )}
                 </div>
 
-                <Button disabled={isLoading}>
+                <Button
+                  disabled={isLoading}
+                  className={`w-full font-normal bg-gray-200 text-gray-800 hover:text-black hover:bg-gray-200 hover:scale-101 tracking-wider`}
+                >
                   {isLoading && (
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   )}

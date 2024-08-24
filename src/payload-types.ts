@@ -49,7 +49,11 @@ export interface Product {
   name: string;
   description?: string | null;
   price: number;
-  category: "CarAccessories" | "Decals_Stickers" | "LEDStickers";
+  category:
+    | "CarAccessories"
+    | "Decals_Stickers"
+    | "Framed_3D_models"
+    | "Accessories_and_Posters";
   product_files: string | ProductFile;
   approvedForSale?: ("pending" | "approved" | "denied") | null;
   priceId?: string | null;
