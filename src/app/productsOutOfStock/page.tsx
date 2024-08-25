@@ -49,15 +49,13 @@ const ProductsPage = ({ searchParams }: ProductsPageProps) => {
               <DropdownMenuSeparator />
 
               <DropdownMenuItem /*onClick={}*/ className="cursor-pointer">
-                <Link href="/products">
+                <Link href="">
                   <p>In stock (All)</p>
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem /*onClick={}*/ className="cursor-pointer">
-                <Link href="/productsOutOfStock">
-                  <p>Out of stock (0)</p>
-                </Link>
-              </DropdownMenuItem>
+              <p className="text-sm font-normal text-gray-400 ml-2 pb-2 pt-2">
+                Out of stock (0)
+              </p>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

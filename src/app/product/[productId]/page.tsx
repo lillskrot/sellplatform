@@ -51,7 +51,7 @@ const Page = async ({ params }: PageProps) => {
     .filter(Boolean) as string[];
 
   return (
-    <MaxWidthWrapper className="blurry-background">
+    <MaxWidthWrapper className="white-background">
       <div className="">
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           {/* Product Details */}
@@ -82,14 +82,14 @@ const Page = async ({ params }: PageProps) => {
             </ol>
 
             <div className="mt-4">
-              <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              <h1 className="text-3xl tracking-wide text-black sm:text-4xl font-400">
                 {product.name}
               </h1>
             </div>
 
             <section className="mt-4">
               <div className="flex items-center">
-                <p className="font-medium text-gray-900">
+                <p className="text-3xl tracking-wide text-gray-900 sm:text-2xl font-500">
                   {formatPrice(product.price)}
                 </p>
 

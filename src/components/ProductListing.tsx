@@ -64,7 +64,7 @@ const ProductListing = ({ product, index }: ProductListingProps) => {
             {/* Calculate and display 30% more price */}
             <p className="discount-price font-normal text-base text-gray-900 ml-2">
               <span style={{ textDecoration: "line-through" }}>
-                {formatPrice(product.price * 1.3)}
+                {formatPrice(product.price * 1.5)}
               </span>{" "}
             </p>
           </div>

@@ -8,9 +8,9 @@ export default function Home() {
     <>
       <section className="min-w-screen min-h-full border-t border-gray-200 bg-[rgba(244,244,244,255)]">
         <MaxWidthWrapper>
-          <div className="mb-4 text-left">
+          <div className="mb-4 text-center">
             <div className="relative max-w-4xl">
-              <div className="flex mt-12 justify-center md:justify-start">
+              <div className="flex mt-12 justify-center md:ml-36 md:justify-start">
                 <h2 className="text-4xl font-semibold font-sans text-gray-800 tracking-wider">
                   Our collections:
                 </h2>
@@ -19,7 +19,7 @@ export default function Home() {
           </div>
 
           <div
-            className="flex flex-col lg:flex-row gap-4 mb-8"
+            className="flex flex-col lg:flex-row gap-4 mb-8 justify-center items-center"
             style={{ marginTop: "40px" }}
           >
             <div className="flex-none w-full h-80 sm:w-24 sm:h-96 lg:w-48 lg:h-48 flex flex-col justify-center items-center">
@@ -62,7 +62,7 @@ export default function Home() {
 
           {/* Main Text and Subtext under the ProductReel Section */}
           <div className="text-center mt-64 mb-4">
-            <h3 className="text-2xl font-medium text-gray-800">
+            <h3 className="text-2xl font-medium text-gray-800 mb-6">
               Frame Your Supercar Passion
             </h3>
             <p className="text-base text-gray-500">
