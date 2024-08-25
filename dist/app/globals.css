@@ -110,6 +110,14 @@ p,
   /* Or you can change the background color and opacity */
 }
 
+.white-background {
+  backdrop-filter: blur(8px);
+  background-color: rgba(244, 244, 244, 255); /* Fallback color */
+  /* Optionally, you can adjust the following properties to control the blur effect */
+  /* For example, you can increase or decrease the blur radius */
+  /* Or you can change the background color and opacity */
+}
+
 .h3-background {
   display: inline-block;
   position: relative;
@@ -159,4 +167,8 @@ section::after {
   height: 30px;
   width: 100%;
   background: inherit; /* This will extend the existing background color */
+}
+
+.font-400 {
+  font-weight: 400;
 }
