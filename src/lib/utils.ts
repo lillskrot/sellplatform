@@ -1,3 +1,4 @@
+import { Color } from "@/payload-types";
 import { type ClassValue, clsx } from "clsx";
 import { Metadata } from "next";
 import { twMerge } from "tailwind-merge";
@@ -24,6 +25,20 @@ export function formatPrice(
     maximumFractionDigits: 2,
   }).format(numericPrice);
 }
+
+export const getColorName = (color: Color | string) => {
+  if (typeof color === "string") {
+    return color;
+  }
+  return color.name;
+};
+
+export const getColorId = (color: Color | string) => {
+  if (typeof color === "string") {
+    return color;
+  }
+  return color.id;
+};
 
 export function constructMetadata({
   title = "AutosAesthetics.com - the marketplace for high quality car accessories.",

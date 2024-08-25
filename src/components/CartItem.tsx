@@ -1,18 +1,22 @@
 import { PRODUCT_CATEGORIES } from "@/config";
 import { useCart } from "@/hooks/use-cart";
-import { formatPrice } from "@/lib/utils";
+import { formatPrice, getColorName } from "@/lib/utils";
 import { Product } from "@/payload-types";
 import { ImageIcon, X } from "lucide-react";
 import Image from "next/image";
 
 const CartItem = ({ product }: { product: Product }) => {
   const { image } = product.images[0];
+  const { colors } = product;
 
   const { removeItem } = useCart();
 
-  const label = PRODUCT_CATEGORIES.find(
+  const productCategory = PRODUCT_CATEGORIES.find(
     ({ value }) => value === product.category
   )?.label;
+
+  const productColor = getColorName(colors[0]);
+  const productColorId = getColorName(colors[0]);
 
   return (
     <div className="space-y-3 py-2">
@@ -42,12 +46,12 @@ const CartItem = ({ product }: { product: Product }) => {
             </span>
 
             <span className="line-clamp-1 text-xs capitalize text-muted-foreground">
-              {label}
+              Color: {productColor}, Category: {productCategory}
             </span>
 
             <div className="mt-4 text-xs text-muted-foreground">
               <button
-                onClick={() => removeItem(product.id)}
+                onClick={() => removeItem(product.id, productColorId)}
                 className="flex items-center gap-0.5"
               >
                 <X className="w-3 h-4" />

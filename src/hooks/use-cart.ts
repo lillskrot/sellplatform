@@ -1,4 +1,4 @@
-import { Product } from "@/payload-types";
+import { Color, Product } from "@/payload-types";
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 
@@ -9,7 +9,7 @@ export type CartItem = {
 type CartState = {
   items: CartItem[];
   addItem: (product: Product) => void;
-  removeItem: (productId: string) => void;
+  removeItem: (productId: string, colorId?: string) => void;
   clearCart: () => void;
 };
 
@@ -21,9 +21,13 @@ export const useCart = create<CartState>()(
         set((state) => {
           return { items: [...state.items, { product }] };
         }),
-      removeItem: (id) =>
+      removeItem: (id, colorId) =>
         set((state) => ({
-          items: state.items.filter((item) => item.product.id !== id),
+          items: state.items.filter(
+            (item) =>
+              item.product.id !== id &&
+              (item.product.colors[0] as Color).id === colorId
+          ),
         })),
       clearCart: () => set({ items: [] }),
     }),

@@ -13,58 +13,66 @@ export interface Config {
     media: Media;
     product_files: ProductFile;
     orders: Order;
-    "payload-preferences": PayloadPreference;
-    "payload-migrations": PayloadMigration;
+    colors: Color;
+    'payload-preferences': PayloadPreference;
+    'payload-migrations': PayloadMigration;
   };
   globals: {};
 }
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users".
+ */
 export interface User {
   id: string;
+  postalcode?: string | null;
+  city?: string | null;
+  address?: string | null;
+  Country?: string | null;
+  Lastname?: string | null;
+  Firstname?: string | null;
+  Apartment?: string | null;
   products?: (string | Product)[] | null;
   product_files?: (string | ProductFile)[] | null;
-  role: "admin" | "user";
+  role: 'admin' | 'user';
   updatedAt: string;
   createdAt: string;
   email: string;
-  postalcode: string;
-  city: string;
-  address: string;
-  Country: string;
-  Lastname: string;
-  Firstname: string;
-  Apartment: string;
   resetPasswordToken?: string | null;
   resetPasswordExpiration?: string | null;
   salt?: string | null;
   hash?: string | null;
-  _verified?: boolean | null;
-  _verificationToken?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
   password: string | null;
 }
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "products".
+ */
 export interface Product {
   id: string;
   user?: (string | null) | User;
   name: string;
   description?: string | null;
   price: number;
-  category:
-    | "CarAccessories"
-    | "Decals_Stickers"
-    | "Framed_3D_models"
-    | "Accessories_and_Posters";
+  category: 'Decals_Stickers' | 'CarAccessories' | 'Framed_3D_models' | 'Accessories_and_Posters';
   product_files: string | ProductFile;
-  approvedForSale?: ("pending" | "approved" | "denied") | null;
+  approvedForSale?: ('pending' | 'approved' | 'denied') | null;
   priceId?: string | null;
   stripeId?: string | null;
   images: {
     image: string | Media;
     id?: string | null;
   }[];
+  colors: (string | Color)[];
   updatedAt: string;
   createdAt: string;
 }
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "product_files".
+ */
 export interface ProductFile {
   id: string;
   user?: (string | null) | User;
@@ -77,6 +85,10 @@ export interface ProductFile {
   width?: number | null;
   height?: number | null;
 }
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media".
+ */
 export interface Media {
   id: string;
   user?: (string | null) | User;
@@ -89,7 +101,7 @@ export interface Media {
   width?: number | null;
   height?: number | null;
   sizes?: {
-    thumbnail?: {
+    thumbnailTUB?: {
       url?: string | null;
       width?: number | null;
       height?: number | null;
@@ -115,6 +127,21 @@ export interface Media {
     };
   };
 }
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "colors".
+ */
+export interface Color {
+  id: string;
+  name: string;
+  hex: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "orders".
+ */
 export interface Order {
   id: string;
   _isPaid: boolean;
@@ -123,10 +150,14 @@ export interface Order {
   updatedAt: string;
   createdAt: string;
 }
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-preferences".
+ */
 export interface PayloadPreference {
   id: string;
   user: {
-    relationTo: "users";
+    relationTo: 'users';
     value: string | User;
   };
   key?: string | null;
@@ -142,6 +173,10 @@ export interface PayloadPreference {
   updatedAt: string;
   createdAt: string;
 }
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-migrations".
+ */
 export interface PayloadMigration {
   id: string;
   name?: string | null;
@@ -150,6 +185,7 @@ export interface PayloadMigration {
   createdAt: string;
 }
 
-declare module "payload" {
+
+declare module 'payload' {
   export interface GeneratedTypes extends Config {}
 }
