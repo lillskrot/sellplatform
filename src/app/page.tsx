@@ -39,9 +39,9 @@ const perks = [
 export default function Home() {
   return (
     <>
-      <div style={{ marginTop: "100px" }}>
+      <div className="md:pt-24 pt-5">
         <MaxWidthWrapper>
-          <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl">
+          <div className="pb-20 md:pt-20 pt-10 mx-auto text-center flex flex-col items-center max-w-3xl">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl font-heading">
               The #1 store for car{" "}
               <span className="text-gray-800">enthusiasts</span>

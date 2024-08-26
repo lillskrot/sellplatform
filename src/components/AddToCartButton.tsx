@@ -24,7 +24,7 @@ const AddToCartButton = ({ product }: { product: Product }) => {
         setIsSuccess(true);
       }}
       size="lg"
-      className="w-full"
+      className="w-full outline outline-2 drop-shadow-md pt-6 pb-6"
     >
       {isSuccess ? "Added!" : "Add to cart"}
     </Button>
