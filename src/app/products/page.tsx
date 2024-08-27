@@ -1,8 +1,7 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import ProductReel from "@/components/ProductReel";
 import { PRODUCT_CATEGORIES } from "@/config";
-
-import ProductListing from "@/components/ProductListing";
+import { ChildProducts } from "../product/ChildProducts";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,6 +22,11 @@ const parse = (param: Param) => {
   return typeof param === "string" ? param : undefined;
 };
 
+// Example function to filter out child products
+const filterOutChildProducts = (products: any[]) => {
+  return products.filter((product) => !product.isChildProduct); // Adjust `isChildProduct` to your actual field
+};
+
 const ProductsPage = ({ searchParams }: ProductsPageProps) => {
   const sort = parse(searchParams.sort);
   const category = parse(searchParams.category);
@@ -30,6 +34,24 @@ const ProductsPage = ({ searchParams }: ProductsPageProps) => {
   const label = PRODUCT_CATEGORIES.find(
     ({ value }) => value === category
   )?.label;
+
+  // Example data fetching function; replace with actual data fetching
+  const fetchProducts = async (query: {
+    category?: string;
+    limit?: number;
+    sort?: string;
+  }) => {
+    // Fetch products (replace this with actual API call or data fetching logic)
+    const products = await fetch("/api/products", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(query),
+    }).then((res) => res.json());
+
+    return filterOutChildProducts(products); // Filter child products
+  };
 
   return (
     <section className="min-w-screen min-h-full border-t border-gray-200 bg-[rgba(244,244,244,255)]">

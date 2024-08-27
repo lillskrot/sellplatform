@@ -122,7 +122,7 @@ const Page = async ({ params }: PageProps) => {
                   aria-hidden="true"
                   className="h-5 w-5 flex-shrink-0 text-green-500"
                 />
-                <p className="ml-2 text-base text-gray-500">FREE shipping</p>
+                <p className="ml-2 text-base text-gray-500">Free shipping</p>
               </div>
               <div className="mt-4 space-y-6 ">
                 <p className="text-sm text-gray-500 ">Color</p>
@@ -138,14 +138,10 @@ const Page = async ({ params }: PageProps) => {
           </div>
 
           {/* add to cart part */}
-          <div className="mt-10 lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start">
+          <div className=" lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start">
             <div>
-              <div className="mt-10">
+              <div className="">
                 <ChildProducts products={childProducts} />
-
-                {typeof product.color === "string"
-                  ? product.color
-                  : product.color.name}
 
                 <AddToCartButton product={product} />
               </div>

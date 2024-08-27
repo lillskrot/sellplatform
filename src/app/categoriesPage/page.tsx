@@ -26,7 +26,7 @@ export default function Home() {
               <ProductReel
                 title="Hello"
                 query={{ sort: "desc", limit: 0 }}
-                href="/products?category=CarAccessories"
+                href="/products?category=1_18"
                 linkText=" 1:18  Scale  Models     ‎ ‎ "
                 imageSrc="/1_18Model.png"
               />

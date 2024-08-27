@@ -22,7 +22,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     label: "1:18 Scale Models",
-    value: "CarAccessories" as const,
+    value: "1_18" as const,
     featured: [
       {
         name: "Floor Mats",

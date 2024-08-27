@@ -25,7 +25,7 @@ exports.PRODUCT_CATEGORIES = [
     },
     {
         label: "1:18 Scale Models",
-        value: "CarAccessories",
+        value: "1_18",
         featured: [
             {
                 name: "Floor Mats",
