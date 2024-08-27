@@ -8,6 +8,8 @@ import { formatPrice } from "@/lib/utils";
 import { Check, Shield } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ChildProducts } from "../ChildProducts";
+import { Product } from "@/payload-types";
 
 interface PageProps {
   params: {
@@ -39,6 +41,19 @@ const Page = async ({ params }: PageProps) => {
   });
 
   const [product] = products;
+
+  const { docs: childProducts } = await payload.find({
+    collection: "products",
+    limit: 100,
+    where: {
+      parentId: {
+        equals: product.parentId ? (product.parentId as Product).id : productId,
+      },
+      approvedForSale: {
+        equals: "approved",
+      },
+    },
+  });
 
   if (!product) return notFound();
 
@@ -125,7 +140,13 @@ const Page = async ({ params }: PageProps) => {
           {/* add to cart part */}
           <div className="mt-10 lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start">
             <div>
-              <div className="mt-10 ">
+              <div className="mt-10">
+                <ChildProducts products={childProducts} />
+
+                {typeof product.color === "string"
+                  ? product.color
+                  : product.color.name}
+
                 <AddToCartButton product={product} />
               </div>
 

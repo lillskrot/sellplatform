@@ -7,16 +7,13 @@ import Image from "next/image";
 
 const CartItem = ({ product }: { product: Product }) => {
   const { image } = product.images[0];
-  const { colors } = product;
+  const { color } = product;
 
   const { removeItem } = useCart();
 
   const productCategory = PRODUCT_CATEGORIES.find(
     ({ value }) => value === product.category
   )?.label;
-
-  const productColor = getColorName(colors[0]);
-  const productColorId = getColorName(colors[0]);
 
   return (
     <div className="space-y-3 py-2">
@@ -46,12 +43,13 @@ const CartItem = ({ product }: { product: Product }) => {
             </span>
 
             <span className="line-clamp-1 text-xs capitalize text-muted-foreground">
-              Color: {productColor}, Category: {productCategory}
+              Color: {typeof color === "string" ? color : color.name}, Category:{" "}
+              {productCategory}
             </span>
 
             <div className="mt-4 text-xs text-muted-foreground">
               <button
-                onClick={() => removeItem(product.id, productColorId)}
+                onClick={() => removeItem(product.id)}
                 className="flex items-center gap-0.5"
               >
                 <X className="w-3 h-4" />
