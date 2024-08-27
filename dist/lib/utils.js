@@ -11,7 +11,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.constructMetadata = exports.formatPrice = exports.cn = void 0;
+exports.constructMetadata = exports.getColorId = exports.getColorName = exports.formatPrice = exports.cn = void 0;
 var clsx_1 = require("clsx");
 var tailwind_merge_1 = require("tailwind-merge");
 function cn() {
@@ -34,6 +34,20 @@ function formatPrice(price, options) {
     }).format(numericPrice);
 }
 exports.formatPrice = formatPrice;
+var getColorName = function (color) {
+    if (typeof color === "string") {
+        return color;
+    }
+    return color.name;
+};
+exports.getColorName = getColorName;
+var getColorId = function (color) {
+    if (typeof color === "string") {
+        return color;
+    }
+    return color.id;
+};
+exports.getColorId = getColorId;
 function constructMetadata(_a) {
     var _b = _a === void 0 ? {} : _a, _c = _b.title, title = _c === void 0 ? "AutosAesthetics.com - the marketplace for high quality car accessories." : _c, _d = _b.description, description = _d === void 0 ? "AutosAesthetics.com is an open-source marketplace for car accessories." : _d, _e = _b.image, image = _e === void 0 ? "/thumbnailTUB.png" : _e, _f = _b.icons, icons = _f === void 0 ? "/favicon.ico" : _f, _g = _b.noIndex, noIndex = _g === void 0 ? false : _g;
     return __assign({ title: title, description: description, openGraph: {

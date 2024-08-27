@@ -239,5 +239,13 @@ export const Products: CollectionConfig = {
         },
       ],
     },
+    {
+      name: "colors",
+      label: "Colors",
+      type: "relationship",
+      relationTo: "colors",
+      hasMany: true, // Set to true if a product can have multiple colors
+      required: true,
+    },
   ],
 };
