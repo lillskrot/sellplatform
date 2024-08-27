@@ -100,11 +100,12 @@ var yourOwnAndPurchased = function (_a) {
                     purchasedProductFileIds = orders
                         .map(function (order) {
                         return order.products.map(function (product) {
+                            var _a;
                             if (typeof product === "string")
                                 return req.payload.logger.error("Search depth not sufficient to find purchased file IDs");
                             return typeof product.product_files === "string"
                                 ? product.product_files
-                                : product.product_files.id;
+                                : (_a = product.product_files) === null || _a === void 0 ? void 0 : _a.id;
                         });
                     })
                         .filter(Boolean)

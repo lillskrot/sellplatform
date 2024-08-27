@@ -26,7 +26,7 @@ export const useCart = create<CartState>()(
           items: state.items.filter(
             (item) =>
               item.product.id !== id &&
-              (item.product.colors[0] as Color).id === colorId
+              (item.product.color as Color).id === colorId
           ),
         })),
       clearCart: () => set({ items: [] }),
