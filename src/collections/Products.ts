@@ -2,10 +2,10 @@ import {
   AfterChangeHook,
   BeforeChangeHook,
 } from "payload/dist/collections/config/types";
-import { PRODUCT_CATEGORIES } from "../../config";
+import { PRODUCT_CATEGORIES } from "../config";
 import { Access, CollectionConfig } from "payload/types";
-import { Product, User } from "../../payload-types";
-import { stripe } from "../../lib/stripe";
+import { Product, User } from "../payload-types";
+import { stripe } from "../lib/stripe";
 
 const addUser: BeforeChangeHook<Product> = async ({ req, data }) => {
   const user = req.user;
@@ -166,7 +166,7 @@ export const Products: CollectionConfig = {
       name: "product_files",
       label: "Product file(s)",
       type: "relationship",
-      required: true,
+      required: false,
       relationTo: "product_files",
       hasMany: false,
     },
@@ -240,12 +240,28 @@ export const Products: CollectionConfig = {
       ],
     },
     {
-      name: "colors",
-      label: "Colors",
+      name: "color",
+      label: "Color",
       type: "relationship",
       relationTo: "colors",
-      hasMany: true, // Set to true if a product can have multiple colors
+      hasMany: false,
       required: true,
+    },
+    {
+      name: "parentId",
+      label: "Parent Product",
+      type: "relationship",
+      relationTo: "products", // Point to the same collection
+      hasMany: false,
+      required: false,
+    },
+    {
+      name: "related",
+      label: "Related Product",
+      type: "relationship",
+      relationTo: "products", // Point to the same collection
+      hasMany: true,
+      required: false,
     },
   ],
 };

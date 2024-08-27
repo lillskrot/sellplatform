@@ -57,7 +57,7 @@ export interface Product {
   description?: string | null;
   price: number;
   category: 'Decals_Stickers' | 'CarAccessories' | 'Framed_3D_models' | 'Accessories_and_Posters';
-  product_files: string | ProductFile;
+  product_files?: (string | null) | ProductFile;
   approvedForSale?: ('pending' | 'approved' | 'denied') | null;
   priceId?: string | null;
   stripeId?: string | null;
@@ -65,7 +65,9 @@ export interface Product {
     image: string | Media;
     id?: string | null;
   }[];
-  colors: (string | Color)[];
+  color: string | Color;
+  parentId?: (string | null) | Product;
+  related?: (string | Product)[] | null;
   updatedAt: string;
   createdAt: string;
 }
