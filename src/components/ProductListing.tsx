@@ -44,7 +44,7 @@ const ProductListing = ({ product, index }: ProductListingProps) => {
           <ImageSlider urls={validUrls} />
 
           <h3 className="mt-4 font-medium text-sm text-black-1000 relative flex items-center">
-            <span className="h3-background">{product.name}</span>
+            <span className="">{product.name}</span>
             <span
               className="text-green-500 ml-3 text-sm cursor-pointer"
               title="In Storage"
@@ -53,7 +53,7 @@ const ProductListing = ({ product, index }: ProductListingProps) => {
             </span>
           </h3>
 
-          <p className="h3-background w-2/3 text-sm text-gray-900">{label}</p>
+          <p className=" w-2/3 text-sm text-gray-900">{label}</p>
 
           <div className="price-container flex items-center">
             {/* Display original price */}

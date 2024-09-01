@@ -124,27 +124,10 @@ p,
 .white-background {
   backdrop-filter: blur(8px);
   background-color: rgba(244, 244, 244, 255); /* Fallback color */
-  width: max-content;
+  /*width: max-content;
   /* Optionally, you can adjust the following properties to control the blur effect */
   /* For example, you can increase or decrease the blur radius */
   /* Or you can change the background color and opacity */
-}
-
-.h3-background {
-  display: inline-block;
-  position: relative;
-}
-
-.h3-background::before {
-  content: "";
-  position: absolute;
-  top: -0.2rem; /* Adjust to position the square */
-  left: -0.2rem; /* Adjust to position the square */
-  width: calc(100% + 0.4rem); /* Adjust to cover the text width */
-  height: calc(100% + 0.4rem); /* Adjust to cover the text height */
-  background-color: rgba(255, 255, 255, 0.5); /* Transparent white */
-  border-radius: 0.5rem; /* Adjust border radius as needed */
-  z-index: -1;
 }
 
 .hover\:scale-101:hover {
@@ -176,11 +159,51 @@ p,
 section::after {
   content: "";
   display: block;
-  height: 30px;
+  height: 10px;
   width: 100%;
   background: inherit; /* This will extend the existing background color */
 }
 
 .font-400 {
   font-weight: 400;
+}
+
+/* Ensure parent div does not use flexbox or grid */
+.parent-class {
+  display: block; /* Or remove if it's not necessary */
+}
+
+/* Ensure no floating is applied */
+.child-class {
+  float: none;
+}
+
+/* Ensure block-level display for <p> elements */
+p {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure no unexpected width or overflow settings */
+.parent-class,
+.child-class {
+  width: auto;
+  overflow: visible;
+}
+
+.line-item {
+  display: block;
+  position: relative;
+  padding-left: 1.4rem; /* Space for the dot */
+  margin-bottom: 0.5rem; /* Space between lines if needed */
+}
+
+.line-item:not(.no-dot)::before {
+  content: "•"; /* Black dot character */
+  color: black; /* Dot color */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem; /* Adjust size of the dot */
 }

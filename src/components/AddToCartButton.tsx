@@ -27,7 +27,7 @@ const AddToCartButton = ({ product }: { product: Product }) => {
     <Button
       onClick={onClick}
       size="lg"
-      className="w-full outline outline-2 drop-shadow-md pt-6 pb-6"
+      className="w-full outline outline-1 drop-shadow-sm pt-6 pb-6"
     >
       {isSuccess ? "Added!" : "Add to cart"}
     </Button>
