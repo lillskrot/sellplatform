@@ -101,14 +101,14 @@ export default function Home() {
                 Trending Collections
               </h2>
               <p
-                className="text-base text-gray-500 tracking-wider"
+                className="text-base text-gray tracking-wider"
                 style={{ marginLeft: "auto", marginRight: "auto" }}
               >
                 Discover Our Bestselling Products and Collections. Join the club
                 of those who
               </p>
               <p
-                className="text-base text-gray-500 tracking-wider"
+                className="text-base text-gray tracking-wider"
                 style={{ marginLeft: "auto", marginRight: "auto" }}
               >
                 appreciate style and performance.

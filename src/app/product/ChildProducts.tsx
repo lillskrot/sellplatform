@@ -43,8 +43,8 @@ const ProductItem = ({ product }: { product: Product }) => {
                 ? product.color
                 : product.color.name)
                 ? "#fff" // White text when background is #001128
-                : "#000", // Default text color
-            border: "1px solid #000", // Black outline
+                : "text-gray-hard", // Default text color
+            border: "1px solid #111", // Black outline
             borderRadius: "24px", // Rounded edges
             display: "inline-block", // Ensure the span respects the border-radius
             margin: "0 8px", // Adds space between the rectangles

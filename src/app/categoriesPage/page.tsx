@@ -65,11 +65,11 @@ export default function Home() {
             <h3 className="text-2xl font-medium text-gray-800 mb-6">
               Frame Your Supercar Passion
             </h3>
-            <p className="text-base text-gray-500">
+            <p className="text-base text-gray">
               Display your supercar love with our Scale Models, Posters, and 3D
               Frames. Perfect for any car
             </p>
-            <p className="text-sm text-gray-500">enthusiast.</p>
+            <p className="text-sm text-gray">enthusiast.</p>
             <h3 className="text-3xl font-normal text-gray-800 mt-32">
               Over 100
             </h3>

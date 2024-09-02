@@ -31,7 +31,7 @@ const ProductsPage = ({ searchParams }: ProductsPageProps) => {
 
       <MaxWidthWrapper>
         <div className="w-full mt-12 flex items-center space-x-4">
-          <p className="text-base text-gray-600">Filter:</p>
+          <p className="text-base text-gray">Filter:</p>
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild className="overflow-visible">
@@ -39,7 +39,7 @@ const ProductsPage = ({ searchParams }: ProductsPageProps) => {
                 size="sm"
                 className="relative bg-transparent hover:bg-transparent"
               >
-                <p className="text-base font-normal text-gray-600 hover:underline">
+                <p className="text-base font-normal text-gray hover:underline">
                   Availability ⌵
                 </p>
               </Button>

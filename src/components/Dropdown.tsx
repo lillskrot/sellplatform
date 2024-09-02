@@ -30,7 +30,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, dropdownText }) => {
         <div
           className="w-full white-background border-gray-300 rounded-md" // `mt-2` for space between button and dropdown
         >
-          <div className="p-2 text-gray-700">{dropdownText}</div>
+          <div className="p-2 text-gray">{dropdownText}</div>
         </div>
       )}
     </div>

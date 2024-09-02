@@ -75,19 +75,19 @@ const Footer = () => {
             <div className="flex space-x-8">
               <Link
                 href="/Terms&Services"
-                className="text-sm text-muted-foreground hover:text-gray-600"
+                className="text-sm text-muted-foreground hover:text-gray"
               >
                 Terms
               </Link>
               <Link
                 href="#"
-                className="text-sm text-muted-foreground hover:text-gray-600"
+                className="text-sm text-muted-foreground hover:text-gray"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="#"
-                className="text-sm text-muted-foreground hover:text-gray-600"
+                className="text-sm text-muted-foreground hover:text-gray"
               >
                 Cookie Policy
               </Link>

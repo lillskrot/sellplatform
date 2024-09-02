@@ -151,7 +151,7 @@ export const PageCart = ({ user }: { user: User | null }) => {
 
           <div className="mt-6 space-y-4">
             <div className="flex items-center justify-between">
-              <p className="text-sm text-gray-600">Subtotal</p>
+              <p className="text-sm text-gray">Subtotal</p>
               <p className="text-sm font-medium text-gray-900">
                 {isMounted ? (
                   formatPrice(cartTotal)

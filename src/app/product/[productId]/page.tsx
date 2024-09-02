@@ -12,6 +12,7 @@ import { notFound } from "next/navigation";
 import { ChildProducts } from "../ChildProducts";
 import { Product } from "@/payload-types";
 import { BadgeCheck, Truck, Box, Ruler, ArrowBigLeft } from "lucide-react";
+import React from "react";
 
 interface PageProps {
   params: {
@@ -144,14 +145,14 @@ const Page = async ({ params }: PageProps) => {
               </ol>
 
               <div className="mt-4">
-                <h1 className="text-3xl tracking-wide text-black sm:text-4xl font-normal">
+                <h1 className="text-3xl tracking-wide text-gray-hard sm:text-4xl font-normal roboto-bold">
                   {product.name}
                 </h1>
               </div>
 
               <section className="mt-4">
                 <div className="flex items-center">
-                  <p className="text-2xl tracking-wide text-gray-900 sm:text-2xl font-500">
+                  <p className=" tracking-wide text-gray-hard roboto-thin text-2xl">
                     {formatPrice(product.price)}
                   </p>
 
@@ -165,14 +166,14 @@ const Page = async ({ params }: PageProps) => {
                     aria-hidden="true"
                     className="h-5 w-5 flex-shrink-0 text-green-500"
                   />
-                  <p className="ml-2 text-base text-gray-500">Free shipping</p>
+                  <p className="ml-2 text-base text-gray">Free shipping</p>
                 </div>
 
                 <div className="mt-4 space-y-6">
-                  <p className="text-sm text-gray-500">Color</p>
+                  <p className="text-sm text-gray">Color</p>
                 </div>
 
-                <div className="lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start mt-6">
+                <div className="lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start mt-3">
                   <ChildProducts products={childProducts} />
                 </div>
 
@@ -216,10 +217,13 @@ const Page = async ({ params }: PageProps) => {
                     className="h-10 w-10 ml-0 sm:ml-5 text-gray-900"
                   />
                   <div>
-                    <h3 className="text-lg ml-0 sm:ml-5 font-medium text-black">
+                    <h3 className="text-lg ml-0 sm:ml-5 font-bold text-black">
                       {perk.name}
                     </h3>
-                    <p className="text-sm ml-0 sm:ml-5 text-gray-500">
+                    <p
+                      className="text-sm ml-0 sm:ml-5"
+                      style={{ color: "#939393" }}
+                    >
                       {perk.description}
                     </p>
                   </div>
@@ -232,7 +236,7 @@ const Page = async ({ params }: PageProps) => {
           <div className="mt-12 space-y-6">
             {product.description ? (
               <p
-                className="text-base text-gray-600"
+                className="text-base text-gray"
                 style={{
                   wordWrap: "break-word",
                   lineHeight: "1.6",
@@ -255,70 +259,80 @@ const Page = async ({ params }: PageProps) => {
           {/* Dropdowns Section */}
           <div className="mt-12 w-full md:w-3/6">
             <div className="border-b border-gray-300"></div>
+
             <div className="flex items-start space-x-4 mt-1 mb-1">
-              {/* Container for icon and dropdown button */}
               <div className="flex items-start space-x-2 text-left">
                 {Shipping_Info.map((perk, index) => (
                   <div key={index} className="flex items-center space-x-2">
                     <perk.Icon
                       strokeWidth={1}
                       className="h-7 w-7 text-black mt-2"
-                    />{" "}
+                    />
                     {/* Adjust mt-2 for vertical margin */}
                   </div>
                 ))}
               </div>
               <div className="ml-10">
-                <Dropdown
-                  label="Shipping info"
+                {/*<Dropdown
+                  label={
+                    <span>
+                      Shipping info <span className="text-gray-600">⌵</span>
+                    </span>
+                  }
                   dropdownText="Shipping takes, on average, 5-10 days. Accurate shipping times displayed at Checkout. If shipping time exceeds 15 days we can issue a full refund. We ship to most of Europe, Asia and North America. Shipping is 100% FREE."
-                />
+                />*/}
               </div>
             </div>
 
             <div className="border-b border-gray-300"></div>
 
             <div className="flex items-start space-x-4 mt-1 mb-1">
-              {/* Container for icon and dropdown button */}
               <div className="flex items-start space-x-2 text-left">
                 {Dimensions.map((perk, index) => (
                   <div key={index} className="flex items-center space-x-2">
                     <perk.Icon
                       strokeWidth={1}
                       className="h-7 w-7 text-black mt-2"
-                    />{" "}
+                    />
                     {/* Adjust mt-2 for vertical margin */}
                   </div>
                 ))}
               </div>
               <div className="ml-10">
-                <Dropdown
-                  label="Dimensions"
-                  dropdownText="Our 1:24 models are approximately 21cm X 10cm making them the perfect size for a collectable. (7.5 inches)"
-                />
+                {/*<Dropdown
+                  label={
+                    <span>
+                      Dimensions <span className="text-gray-600">⌵</span>
+                    </span>
+                  }
+                  dropdownText="Our 1:24 models are approximately 21cm X 10cm making them the perfect size for a collectible. (7.5 inches)"
+                />*/}
               </div>
             </div>
 
             <div className="border-b border-gray-300"></div>
 
             <div className="flex items-start space-x-4 mt-1 mb-1">
-              {/* Container for icon and dropdown button */}
               <div className="flex items-start space-x-2 text-left">
                 {Refunds.map((perk, index) => (
                   <div key={index} className="flex items-center space-x-2">
                     <perk.Icon
                       strokeWidth={1}
                       className="h-7 w-7 text-black mt-2"
-                    />{" "}
+                    />
                     {/* Adjust mt-2 for vertical margin */}
                   </div>
                 ))}
               </div>
               <div className="ml-10">
-                <Dropdown
-                  label="Refunds & Returns"
+                {/*<Dropdown
+                  label={
+                    <span>
+                      Refunds & Returns <span className="text-gray-600">⌵</span>
+                    </span>
+                  }
                   dropdownText="If you are unsatisfied with your purchase or if in a rare circumstance, the product arrives damaged, we will issue you a full refund. Furthermore, if delivery takes more than 15 days or if your parcel has been lost, a full refund will be issued."
-                />
+                />*/}
               </div>
             </div>
 
