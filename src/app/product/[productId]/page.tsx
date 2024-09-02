@@ -87,7 +87,7 @@ const Page = async ({ params }: PageProps) => {
     },
   });
 
-  const [product] = products;
+  const [product] = products as unknown as Array<Product>;
 
   const { docs: childProducts } = await payload.find({
     collection: "products",
@@ -174,7 +174,9 @@ const Page = async ({ params }: PageProps) => {
                 </div>
 
                 <div className="lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start mt-3">
-                  <ChildProducts products={childProducts} />
+                  <ChildProducts
+                    products={childProducts as unknown as Array<Product>}
+                  />
                 </div>
 
                 {/* Move Add to Cart Button Here */}

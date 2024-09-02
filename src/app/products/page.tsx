@@ -94,6 +94,7 @@ const ProductsPage = ({ searchParams }: ProductsPageProps) => {
             category,
             limit: 40,
             sort: sort === "desc" || sort === "asc" ? sort : undefined,
+            parentId: null,
           }}
         />
       </MaxWidthWrapper>

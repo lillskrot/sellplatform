@@ -5,14 +5,7 @@ import { Product } from "@/payload-types";
 import { trpc } from "@/trpc/client";
 import Link from "next/link";
 import ProductListing from "./ProductListing";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-import { Button } from "./ui/button";
+import Image from "next/image";
 
 interface ProductReelProps {
   title: string;
@@ -60,7 +53,7 @@ const ProductReel = (props: ProductReelProps) => {
               className="relative overflow-hidden rounded-tl-lg rounded-tr-lg"
               style={{ width: "200px", height: "200px" }}
             >
-              <img
+              <Image
                 src={imageSrc}
                 alt="Custom"
                 className="w-full h-full object-cover transition-transform duration-700 ease-in-out transform hover:scale-105"

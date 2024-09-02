@@ -19,16 +19,25 @@ export const appRouter = router({
     )
     .query(async ({ input }) => {
       const { query, cursor } = input;
+
+      console.log(input);
+
       const { sort, limit, ...queryOpts } = query;
 
       const payload = await getPayloadClient();
 
-      const parsedQueryOpts: Record<string, { equals: string }> = {};
+      const parsedQueryOpts: Record<
+        string,
+        { equals: string | undefined } | undefined
+      > = {};
 
       Object.entries(queryOpts).forEach(([key, value]) => {
-        parsedQueryOpts[key] = {
-          equals: value,
-        };
+        if (value === null) {
+          // Ensure only defined values are included
+          parsedQueryOpts[key] = {
+            equals: undefined,
+          };
+        }
       });
 
       const page = cursor || 1;
