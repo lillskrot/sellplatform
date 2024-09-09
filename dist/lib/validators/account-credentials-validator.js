@@ -25,7 +25,5 @@ exports.AuthCredentialsValidator = zod_1.z.object({
     Firstname: zod_1.z.string().min(1, {
         message: "Must include Firstname",
     }),
-    Apartment: zod_1.z.string().min(1, {
-        message: "Must include Apartment",
-    }),
+    Apartment: zod_1.z.string().optional(),
 });

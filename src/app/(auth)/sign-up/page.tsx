@@ -25,6 +25,11 @@ const Page = () => {
     formState: { errors },
   } = useForm<TAuthCredentialsValidator>({
     resolver: zodResolver(AuthCredentialsValidator),
+    defaultValues: {
+      Firstname: "",
+      Lastname: "",
+      Apartment: "",
+    },
   });
 
   const searchParams = useSearchParams();

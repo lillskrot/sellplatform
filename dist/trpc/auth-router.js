@@ -128,7 +128,7 @@ exports.authRouter = (0, trpc_1.router)({
                                     Country: Country,
                                     Lastname: Lastname,
                                     Firstname: Firstname,
-                                    Apartment: Apartment,
+                                    Apartment: Apartment !== null && Apartment !== void 0 ? Apartment : "",
                                     role: "user",
                                 },
                             })];

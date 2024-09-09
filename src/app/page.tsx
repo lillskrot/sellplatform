@@ -8,7 +8,7 @@ const perks = [
   {
     name: "Why choose us?",
     Icon: Star,
-    description: `
+    description2: `
       - 100+ Happy Customers 👍
       - Crafted with Precision ✔️
       - High quality materials ⚙️
@@ -133,12 +133,12 @@ export default function Home() {
             className="flex flex-col lg:flex-row gap-4 mb-8"
             style={{ marginTop: "40px" }}
           >
-            <div className="flex-none w-full h-80 sm:w-24 sm:h-96 lg:w-48 lg:h-48 flex justify-center items-center">
+            <div className="flex-none w-full h-96 sm:w-24 sm:h-96 lg:w-48 lg:h-48 flex justify-center items-center">
               <ProductReel
                 title="Hello"
                 query={{ sort: "desc", limit: 0 }}
                 href="/products?category=CarAccessories"
-                linkText=" 1:18  Scale  Models     ‎ ‎ "
+                linkText="1:18 Scale Models"
                 imageSrc="/1_18Model.png"
               />
             </div>
@@ -194,12 +194,33 @@ export default function Home() {
                   <h3 className="text-base font-medium text-gray-900">
                     {perk.name}
                   </h3>
-                  <p
-                    className="mt-3 text-sm"
-                    style={{ color: "rgba(50, 50, 50, 1)" }}
-                  >
-                    {perk.description}
-                  </p>
+
+                  {/* Render the description if it exists */}
+                  {perk.description && (
+                    <p
+                      className="mt-3 text-sm pl-5 pr-5 pb-5"
+                      style={{ color: "rgba(50, 50, 50, 1)" }}
+                    >
+                      {perk.description.split("\n").map((line, index) => (
+                        <span key={index}>{line}</span>
+                      ))}
+                    </p>
+                  )}
+
+                  {/* Conditionally render description2 if it exists */}
+                  {perk.description2 && (
+                    <p
+                      className="mt-3 text-sm"
+                      style={{ color: "rgba(50, 50, 50, 1)" }}
+                    >
+                      {perk.description2.split("\n").map((line, index) => (
+                        <span key={index}>
+                          {line}
+                          <br />
+                        </span>
+                      ))}
+                    </p>
+                  )}
                 </div>
               </div>
             ))}

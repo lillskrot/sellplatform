@@ -95,7 +95,7 @@ export const authRouter = router({
           Country: Country,
           Lastname: Lastname,
           Firstname: Firstname,
-          Apartment: Apartment,
+          Apartment: Apartment ?? "",
           role: "user",
         },
       });

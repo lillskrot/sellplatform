@@ -82,6 +82,7 @@ exports.appRouter = (0, trpc_1.router)({
                 switch (_c.label) {
                     case 0:
                         query = input.query, cursor = input.cursor;
+                        console.log(input);
                         sort = query.sort, limit = query.limit, queryOpts = __rest(query, ["sort", "limit"]);
                         return [4 /*yield*/, (0, get_payload_1.getPayloadClient)()];
                     case 1:
@@ -89,9 +90,12 @@ exports.appRouter = (0, trpc_1.router)({
                         parsedQueryOpts = {};
                         Object.entries(queryOpts).forEach(function (_a) {
                             var key = _a[0], value = _a[1];
-                            parsedQueryOpts[key] = {
-                                equals: value,
-                            };
+                            if (value === null) {
+                                // Ensure only defined values are included
+                                parsedQueryOpts[key] = {
+                                    equals: undefined,
+                                };
+                            }
                         });
                         page = cursor || 1;
                         return [4 /*yield*/, payload.find({

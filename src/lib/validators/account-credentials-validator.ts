@@ -23,9 +23,7 @@ export const AuthCredentialsValidator = z.object({
   Firstname: z.string().min(1, {
     message: "Must include Firstname",
   }),
-  Apartment: z.string().min(1, {
-    message: "Must include Apartment",
-  }),
+  Apartment: z.string().optional(),
 });
 
 export type TAuthCredentialsValidator = z.infer<

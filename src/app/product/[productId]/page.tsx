@@ -275,66 +275,10 @@ const Page = async ({ params }: PageProps) => {
                 ))}
               </div>
               <div className="ml-10">
-                {/*<Dropdown
-                  label={
-                    <span>
-                      Shipping info <span className="text-gray-600">⌵</span>
-                    </span>
-                  }
+                <Dropdown
+                  label="Shipping info ⌵"
                   dropdownText="Shipping takes, on average, 5-10 days. Accurate shipping times displayed at Checkout. If shipping time exceeds 15 days we can issue a full refund. We ship to most of Europe, Asia and North America. Shipping is 100% FREE."
-                />*/}
-              </div>
-            </div>
-
-            <div className="border-b border-gray-300"></div>
-
-            <div className="flex items-start space-x-4 mt-1 mb-1">
-              <div className="flex items-start space-x-2 text-left">
-                {Dimensions.map((perk, index) => (
-                  <div key={index} className="flex items-center space-x-2">
-                    <perk.Icon
-                      strokeWidth={1}
-                      className="h-7 w-7 text-black mt-2"
-                    />
-                    {/* Adjust mt-2 for vertical margin */}
-                  </div>
-                ))}
-              </div>
-              <div className="ml-10">
-                {/*<Dropdown
-                  label={
-                    <span>
-                      Dimensions <span className="text-gray-600">⌵</span>
-                    </span>
-                  }
-                  dropdownText="Our 1:24 models are approximately 21cm X 10cm making them the perfect size for a collectible. (7.5 inches)"
-                />*/}
-              </div>
-            </div>
-
-            <div className="border-b border-gray-300"></div>
-
-            <div className="flex items-start space-x-4 mt-1 mb-1">
-              <div className="flex items-start space-x-2 text-left">
-                {Refunds.map((perk, index) => (
-                  <div key={index} className="flex items-center space-x-2">
-                    <perk.Icon
-                      strokeWidth={1}
-                      className="h-7 w-7 text-black mt-2"
-                    />
-                    {/* Adjust mt-2 for vertical margin */}
-                  </div>
-                ))}
-              </div>
-              <div className="ml-10">
-                {/*<Dropdowna
-                  label={
-                    <span>
-                      Refunds & Returns <span className="text-gray-600">⌵</span>
-                    </span>
-                  }
-                  dropdownText="If you are unsatisfied with your purchase or if in a rare circumstance, the product arrives damaged, we will issue you a full refund. Furthermore, if delivery takes more than 15 days or if your parcel has been lost, a full refund will be issued."
-                />*/}
+                />
               </div>
             </div>
 
@@ -352,5 +296,5 @@ const Page = async ({ params }: PageProps) => {
     </MaxWidthWrapper>
   );
 };
-
+//Our 1:24 models are approximately 21cm X 10cm making them the perfect size for a collectible. (7.5 inches) Our 1:18 models are approximately 30cm X 15cm. Their large size makes them perfect for a collectable or as a display model. Our 3D Frames are approximately 32cm by 23cm. The Removable Model cars are 1:32 Scale (17cm) Posters are 21 by 30cm (A4) making them a perfect decoration for any wall.
 export default Page;

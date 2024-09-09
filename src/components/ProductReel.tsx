@@ -57,6 +57,8 @@ const ProductReel = (props: ProductReelProps) => {
                 src={imageSrc}
                 alt="Custom"
                 className="w-full h-full object-cover transition-transform duration-700 ease-in-out transform hover:scale-105"
+                height={600}
+                width={800}
               />
             </div>
           </Link>
@@ -69,6 +71,7 @@ const ProductReel = (props: ProductReelProps) => {
                   display: "block",
                   padding: "32px 16px",
                   width: "200px",
+                  height: "120px",
                   margin: "0 auto",
                 }}
               >
